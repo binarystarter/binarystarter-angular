@@ -1,0 +1,27 @@
+/** Style Snackbar */
+.mdc-snackbar.info .mdc-snackbar__surface .mat-mdc-snack-bar-label {
+  @apply font-semibold;
+}
+
+.mdc-snackbar.info .mdc-snackbar__surface {
+  background-color: var(--primary-500);
+  @apply rounded;
+}
+
+.mdc-snackbar.success .mdc-snackbar__surface .mat-mdc-snack-bar-label {
+  @apply font-semibold;
+}
+
+.mdc-snackbar.success .mdc-snackbar__surface {
+  background-color: var(--success-500);
+  @apply rounded;
+}
+
+.mdc-snackbar.error .mdc-snackbar__surface .mat-mdc-snack-bar-label {
+  @apply font-semibold;
+}
+
+.mdc-snackbar.error .mdc-snackbar__surface {
+  background-color: var(--red-500);
+  @apply rounded;
+}

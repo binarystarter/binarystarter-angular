@@ -1,0 +1,5 @@
+<div *ngIf="group !== undefined">
+  <form [ngClass]="[class, padding, margin]" class="app-form" [formGroup]="group">
+    <ng-content></ng-content>
+  </form>
+</div>

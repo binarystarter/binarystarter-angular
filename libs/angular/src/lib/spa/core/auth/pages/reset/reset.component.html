@@ -1,0 +1,20 @@
+<div class="max-w-md mx-auto">
+  <div class="bg-white drop-shadow-md rounded">
+    <h1 class="text-2xl mt-7 text-center">Reset password</h1>
+
+    <app-form [group]="form">
+      <app-input
+        label="Password"
+        hint="Min. 8 characters."
+        name="password"
+        type="password"
+        placeholder="********"
+        [group]="form"
+      ></app-input>
+
+      <div class="w-full flex items-center justify-center mt-4 mb-2">
+        <app-submit-button [form]="form" [submitFn]="resetPassword">Reset Password</app-submit-button>
+      </div>
+    </app-form>
+  </div>
+</div>

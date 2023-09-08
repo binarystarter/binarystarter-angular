@@ -1,0 +1,232 @@
+:host {
+}
+
+/**
+  Primary button
+ */
+.app-btn.color-primary {
+  @apply bg-primary-500;
+  @apply text-white;
+  @apply rounded;
+  @apply text-center;
+  @apply transition-all;
+  @apply py-2 px-5;
+  box-shadow: var(--primary-box-shadow);
+}
+
+.app-btn.color-primary:focus {
+  @apply bg-primary-500;
+  @apply outline-0;
+  @apply text-white;
+  @apply bg-primary-50;
+}
+
+.app-btn.color-primary.is-inverted:focus {
+  @apply bg-white;
+  @apply outline;
+  @apply outline-2;
+  @apply outline-primary-500;
+  @apply outline-offset-[-1px];
+  @apply text-primary-500;
+}
+
+.app-btn.color-primary.is-inverted {
+  @apply outline-2;
+  @apply outline-primary-500;
+  @apply outline;
+  @apply bg-white;
+  @apply text-primary-500;
+}
+
+.app-btn.color-primary:hover,
+.app-btn.color-primary:active,
+.app-btn.color-primary:focus {
+  box-shadow: var(--primary-box-shadow-intense);
+}
+
+/* End primary button */
+
+/**
+  Secondary Accent button
+ */
+.app-btn.color-secondary {
+  @apply bg-accent-500;
+  @apply text-white;
+  @apply rounded;
+  @apply text-center;
+  @apply transition-all;
+  @apply py-2 px-5;
+  box-shadow: var(--accent-box-shadow);
+}
+
+.app-btn.color-secondary:focus {
+  @apply bg-accent-500;
+  @apply outline-0;
+  @apply text-white;
+  @apply bg-accent-50;
+}
+
+.app-btn.color-secondary.is-inverted:focus {
+  @apply bg-white;
+  @apply outline;
+  @apply outline-2;
+  @apply outline-accent-500;
+  @apply outline-offset-[-1px];
+  @apply text-accent-500;
+}
+
+.app-btn.color-secondary.is-inverted {
+  @apply outline-2;
+  @apply outline-accent-500;
+  @apply outline;
+  @apply bg-white;
+  @apply text-accent-500;
+}
+
+.app-btn.color-secondary:hover,
+.app-btn.color-secondary:active,
+.app-btn.color-secondary:focus {
+  box-shadow: var(--accent-box-shadow-intense);
+}
+
+/* End secondary button */
+
+/**
+  default button
+ */
+.app-btn.color-default {
+  @apply bg-grey-500;
+  @apply text-white;
+  @apply rounded;
+  @apply text-center;
+  @apply transition-all;
+  @apply py-2 px-5;
+  box-shadow: var(--default-box-shadow);
+}
+
+.app-btn.color-default:focus {
+  @apply bg-grey-500;
+  @apply outline-0;
+  @apply text-white;
+  @apply bg-grey-50;
+}
+
+.app-btn.color-default.is-inverted:focus {
+  @apply bg-white;
+  @apply outline;
+  @apply outline-2;
+  @apply outline-grey-500;
+  @apply outline-offset-[-1px];
+  @apply text-grey-500;
+}
+
+.app-btn.color-default.is-inverted {
+  @apply outline-2;
+  @apply outline-grey-500;
+  @apply outline;
+  @apply bg-white;
+  @apply text-grey-500;
+}
+
+.app-btn.color-default:hover,
+.app-btn.color-default:active,
+.app-btn.color-default:focus {
+  box-shadow: var(--default-box-shadow-intense);
+}
+
+/* End default button */
+
+/**
+  danger button
+ */
+.app-btn.color-danger {
+  @apply bg-red-500;
+  @apply text-white;
+  @apply rounded;
+  @apply text-center;
+  @apply transition-all;
+  @apply py-2 px-5;
+  box-shadow: var(--danger-box-shadow);
+}
+
+.app-btn.color-danger:focus {
+  @apply bg-red-500;
+  @apply outline-0;
+  @apply text-white;
+  @apply bg-red-50;
+}
+
+.app-btn.color-danger.is-inverted:focus {
+  @apply bg-white;
+  @apply outline;
+  @apply outline-2;
+  @apply outline-red-500;
+  @apply outline-offset-[-1px];
+  @apply text-red-500;
+}
+
+.app-btn.color-danger.is-inverted {
+  @apply outline-2;
+  @apply outline-red-500;
+  @apply outline;
+  @apply bg-white;
+  @apply text-red-500;
+}
+
+.app-btn.color-danger:hover,
+.app-btn.color-danger:active,
+.app-btn.color-danger:focus {
+  box-shadow: var(--danger-box-shadow-intense);
+}
+
+/* End danger button */
+
+/**
+  success button
+ */
+.app-btn.color-success {
+  @apply bg-success-500;
+  @apply text-white;
+  @apply rounded;
+  @apply text-center;
+  @apply transition-all;
+  @apply py-2 px-5;
+  box-shadow: var(--success-box-shadow);
+}
+
+.app-btn.color-success:focus {
+  @apply bg-success-500;
+  @apply outline-0;
+  @apply text-white;
+  @apply bg-success-50;
+}
+
+.app-btn.color-success.is-inverted:focus {
+  @apply bg-white;
+  @apply outline;
+  @apply outline-2;
+  @apply outline-success-500;
+  @apply outline-offset-[-1px];
+  @apply text-white;
+}
+
+.app-btn.color-success.is-inverted {
+  @apply outline-2;
+  @apply outline-success-500;
+  @apply outline;
+  @apply bg-white;
+  @apply text-success-500;
+}
+
+.app-btn.color-success:hover,
+.app-btn.color-success:active,
+.app-btn.color-success:focus {
+  box-shadow: var(--success-box-shadow-intense);
+}
+
+.app-btn[disabled] {
+  filter: grayscale(0.9);
+  cursor: not-allowed;
+}
+
+/* End success button */

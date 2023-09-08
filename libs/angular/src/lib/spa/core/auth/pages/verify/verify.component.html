@@ -1,0 +1,23 @@
+<div class="bg-white max-w-md mx-auto drop-shadow-md rounded p-5 mt-5">
+  <h1 class="text-2xl mt-7 text-center">Verify Account</h1>
+  <p class="text-center text-success-500">
+    For a secure & easy login after verification, insert your credentials to login automatically.
+  </p>
+
+  <app-form [group]="form">
+    <app-input label="Email" name="email" type="text" [group]="form"></app-input>
+
+    <app-input
+      label="Password"
+      hint="Please enter your account password"
+      name="password"
+      type="password"
+      placeholder="********"
+      [group]="form"
+    ></app-input>
+
+    <div class="flex items-center justify-center mt-4 mb-2">
+      <app-submit-button [form]="form" [submitFn]="verifyToken">Verify</app-submit-button>
+    </div>
+  </app-form>
+</div>

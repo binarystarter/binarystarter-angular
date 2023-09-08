@@ -1,0 +1,15 @@
+@import './styles/main.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Material theme styling */
+@import './styles/material-theme/material-variables.css';
+@import './styles/material-theme/material-buttons.css';
+@import './styles/material-theme/material-sidenav.css';
+@import './styles/material-theme/material-form.css';
+@import './styles/material-theme/material-typography.css';
+@import './styles/material-theme/material-snackbar.css';
+@import './styles/material-theme/material-spinner.css';
+@import './styles/material-theme/material-animations.css';
+@import './styles/material-theme/material-stepper.css';

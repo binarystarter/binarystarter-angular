@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6.0.5
+    container_name: ${app_name}-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: ${mongo_db}
+      MONGO_INITDB_ROOT_USERNAME: ${mongo_username}
+      MONGO_INITDB_ROOT_PASSWORD: ${mongo_password}
+    volumes:
+      - .mongodata:/data/db
+    env_file:
+      - .env
+    networks:
+      - webnet
+    ports:
+      - ${mongo_host_port}:${mongo_port}
+networks:
+  webnet:
+    driver: bridge
+volumes:
+  exclude:

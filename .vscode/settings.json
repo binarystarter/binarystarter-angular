@@ -1,0 +1,6 @@
+{
+  "javascript.preferences.importModuleSpecifier": "project-relative",
+  "typescript.preferences.importModuleSpecifier": "project-relative",
+  "editor.fontFamily": "'MesloLGL Nerd Font Mono'",
+  "editor.fontSize": 12.5
+}

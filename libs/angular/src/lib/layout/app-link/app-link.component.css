@@ -1,0 +1,15 @@
+.app-link.color-primary:hover {
+  @apply text-primary-300;
+}
+
+.app-link.color-primary {
+  @apply text-primary-500;
+}
+
+.app-link.color-secondary:hover {
+  @apply text-accent-300;
+}
+
+.app-link.color-secondary {
+  @apply text-accent-500;
+}

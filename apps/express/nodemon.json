@@ -1,0 +1,12 @@
+{
+  "watch": ["src/**/*", "../../libs/**/*"],
+  "ext": "ts,json",
+  "ignore": [
+    "src/**/*.spec.ts",
+    "node_modules",
+    ".git",
+    "../../libs/angular/**/*"
+  ],
+  "env": { "LOG_LEVEL": "debug" },
+  "exec": "npx node --inspect=0.0.0.0:9229 -r tsconfig-paths/register -r ts-node/register src/main.ts"
+}

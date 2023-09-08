@@ -1,0 +1,24 @@
+html,
+body {
+  @apply h-full;
+}
+
+body {
+  @apply m-0;
+  @apply font-sans;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+img {
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+p {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

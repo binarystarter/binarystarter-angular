@@ -1,0 +1,51 @@
+/** Style Typography */
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2') format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.mat-typography h1 {
+  @apply py-7;
+  @apply text-3xl;
+  @apply m-0;
+}
+
+.mat-typography h2 {
+  @apply py-5;
+  @apply text-2xl;
+  @apply m-0;
+}
+
+.mat-typography h3 {
+  @apply py-2;
+  @apply text-lg;
+  @apply m-0;
+}
+
+.mat-typography p,
+.mat-typography h1,
+.mat-typography h2,
+.mat-typography h3,
+.mat-typography h4,
+.mat-typography h5 {
+  margin: initial;
+}

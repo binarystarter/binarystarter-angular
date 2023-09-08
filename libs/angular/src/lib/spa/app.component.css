@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.app-drawer-container {
+  display: flex;
+  height: 100vh;
+  flex-grow: 1;
+}
+
+.app-drawer-container .app-drawer {
+  @apply bg-white;
+  @apply w-full;
+  @apply max-w-[20rem];
+  @apply h-full;
+}

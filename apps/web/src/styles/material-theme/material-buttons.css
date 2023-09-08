@@ -1,0 +1,81 @@
+.mdc-button {
+  min-height: 40px;
+}
+
+.mat-mdc-button .mat-primary .mat-mdc-raised-button:not(.mdc-button),
+.mdc-button .mat-primary .mat-mdc-raised-button:not(.mdc-button),
+.mdc-fab .mat-primary .mat-mdc-raised-button:not(.mdc-button),
+.mat-flat-button .mat-primary .mat-mdc-raised-button:not(.mdc-button) {
+  box-shadow: var(--primary-box-shadow);
+}
+
+.mat-mdc-button .mat-primary .mat-mdc-raised-button:not(.mdc-button),
+.mdc-button .mat-primary .mat-mdc-raised-button:not(.mdc-button),
+.mdc-fab .mat-primary .mat-mdc-raised-button:not(.mdc-button),
+.mat-flat-button .mat-primary .mat-mdc-raised-button:not(.mdc-button),
+.mat-mdc-button .mat-primary .mat-mdc-raised-button:not(.mdc-button):hover,
+.mdc-button .mat-primary .mat-mdc-raised-button:not(.mdc-button):hover,
+.mdc-fab .mat-primary .mat-mdc-raised-button:not(.mdc-button):hover,
+.mat-flat-button .mat-primary .mat-mdc-raised-button:not(.mdc-button):hover,
+.mat-mdc-button .mat-primary .mat-mdc-raised-button:not(.mdc-button):active,
+.mdc-button .mat-primary .mat-mdc-raised-button:not(.mdc-button):active,
+.mdc-fab .mat-primary .mat-mdc-raised-button:not(.mdc-button):active,
+.mat-flat-button .mat-primary .mat-mdc-raised-button:not(.mdc-button):active,
+.mat-mdc-button
+  .mat-primary
+  .mat-mdc-raised-button:not(.mdc-button):focus:active,
+.mdc-button .mat-primary .mat-mdc-raised-button:not(.mdc-button):focus:active,
+.mdc-fab .mat-primary .mat-mdc-raised-button:not(.mdc-button):focus:active,
+.mat-flat-button
+  .mat-primary
+  .mat-mdc-raised-button:not(.mdc-button):focus:active,
+.mat-mdc-button .mat-primary .mat-mdc-raised-button:not(.mdc-button):focus,
+.mdc-button .mat-primary .mat-mdc-raised-button:not(.mdc-button):focus,
+.mdc-fab .mat-primary .mat-mdc-raised-button:not(.mdc-button):focus,
+.mat-flat-button .mat-primary .mat-mdc-raised-button:not(.mdc-button):focus {
+  box-shadow: var(--primary-box-shadow-intense);
+}
+
+.mat-mdc-button,
+.mdc-button,
+.mdc-fab,
+.mat-flat-button .mdc-button__label {
+  letter-spacing: normal;
+  @apply text-sm;
+}
+
+.mat-mdc-button,
+.mdc-button,
+.mdc-fab,
+.mat-flat-button {
+  @apply transition-all;
+}
+
+.app-btn-mat .mat-mdc-button .mat-icon {
+  margin-right: 3px;
+}
+
+.app-btn-mat .mat-mdc-button .mdc-button__label {
+  z-index: 13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-btn-mat .mat-mdc-menu-trigger .mat-mdc-button-touch-target {
+  /*width: 100%;*/
+}
+
+.mat-mdc-menu-item span.mdc-list-item__primary-text {
+  width: 100%;
+  display: block;
+}
+
+.app-btn-mat button {
+  display: flex;
+  flex: 1;
+}
+
+.app-btn-mat {
+  width: 100%;
+}

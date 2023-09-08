@@ -1,0 +1,17 @@
+<div
+  class="app-submit-button w-full"
+  [ngClass]="[height]"
+  appSubmitForm
+  [successMessage]="successMessage"
+  (loadingSubject)="toggleLoading($event)"
+  [form]="form"
+  [submitFn]="submitFn"
+>
+  <app-button [disabled]="disabled" color="primary" [class]="height">
+    <div *ngIf="loading" class="loading-animation">
+      <span class="loader"></span>
+    </div>
+
+    <ng-content *ngIf="!loading"></ng-content>
+  </app-button>
+</div>

@@ -1,0 +1,60 @@
+/** Style angular material forms */
+.mat-mdc-form-field .mdc-notched-outline__notch {
+  border-right-style: hidden;
+}
+
+.mat-mdc-form-field.mat-form-field-disabled {
+  cursor: not-allowed;
+}
+
+.mat-mdc-form-field .mat-mdc-form-field-error-wrapper .mat-mdc-form-field-error {
+  @apply text-sm;
+  @apply tracking-normal;
+  @apply text-red-500;
+}
+
+.mat-mdc-form-field .mat-mdc-form-field-error-wrapper {
+  @apply p-0;
+}
+
+.mat-mdc-form-field .mat-mdc-form-field-hint-wrapper .mat-mdc-form-field-hint {
+  @apply tracking-normal;
+  @apply text-grey-700;
+  @apply text-xs;
+}
+
+.mat-mdc-form-field .mat-mdc-form-field-hint-wrapper {
+  @apply p-0;
+}
+
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mdc-notched-outline__leading,
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mdc-notched-outline__notch,
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mdc-notched-outline__trailing {
+  @apply border-grey-900;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing {
+  @apply border-primary-500;
+}
+
+.mat-mdc-form-field .mat-mdc-text-field-wrapper .mdc-notched-outline__notch label mat-label {
+  @apply text-grey-700;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-form-field.ng-touched.ng-invalid .mdc-notched-outline__leading,
+.mat-mdc-form-field.ng-touched.ng-invalid .mdc-notched-outline__notch,
+.mat-mdc-form-field.ng-touched.ng-invalid .mdc-notched-outline__trailing {
+  @apply border-red-500;
+}
+
+.send-message-textarea textarea {
+  height: auto;
+  resize: none;
+  padding-right: 47px;
+}

@@ -1,0 +1,19 @@
+<div [formGroup]="group" [ngClass]="containerClass">
+  <mat-form-field subscriptSizing="dynamic" hintLabel="">
+    <mat-label *ngIf="label !== ''">{{ label }}</mat-label>
+
+    <input
+      (keydown.enter)="onEnterSubmit()"
+      [ngClass]="class"
+      matInput
+      formControlName="{{ name }}"
+      placeholder="{{ placeholder }}"
+      [type]="type"
+    />
+
+    <mat-hint *ngIf="hint" align="start">{{ hint }}</mat-hint>
+    <mat-error *ngIf="control.errors && control.errors[name] && control.errors[name]?.length > 0">{{
+      control.errors[name][0]
+    }}</mat-error>
+  </mat-form-field>
+</div>

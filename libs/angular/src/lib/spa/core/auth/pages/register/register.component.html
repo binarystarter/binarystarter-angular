@@ -1,0 +1,61 @@
+<div class="w-full h-[100vh] flex flex-col md:flex-row">
+  <div
+    class="md:flex-1 flex-2 bg-primary-500 flex flex-col justify-center align-middle md:min-h-full min-h-[25%]"
+  >
+    <h1 class="text-center text-6xl text-white">New Account</h1>
+  </div>
+  <div class="flex-1 flex flex-col justify-center align-middle">
+    <div class="w-full max-w-md mx-auto mt-12 bg-white drop-shadow-md rounded">
+      <app-form [group]="form">
+        <app-input
+          label="Username"
+          name="username"
+          type="text"
+          [group]="form"
+        ></app-input>
+        <app-input
+          label="Email"
+          name="email"
+          type="text"
+          [group]="form"
+        ></app-input>
+
+        <app-input
+          label="First Name"
+          name="firstName"
+          type="text"
+          [group]="form"
+        ></app-input>
+        <app-input
+          label="Last Name"
+          name="lastName"
+          type="text"
+          [group]="form"
+        ></app-input>
+
+        <app-input
+          label="Password"
+          hint="Min. 8 characters."
+          name="password"
+          type="password"
+          placeholder="********"
+          [group]="form"
+        ></app-input>
+
+        <app-input
+          label="Confirm Password"
+          name="confirmPassword"
+          type="password"
+          placeholder=""
+          [group]="form"
+        ></app-input>
+
+        <div class="flex items-center justify-center mt-4 mb-2">
+          <app-submit-button [form]="form" [submitFn]="register"
+            >Create Account</app-submit-button
+          >
+        </div>
+      </app-form>
+    </div>
+  </div>
+</div>

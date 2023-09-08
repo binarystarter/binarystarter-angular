@@ -1,0 +1,31 @@
+/** Animations */
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/** Loading animations */
+.loading-animation .loader {
+  width: 15px;
+  height: 15px;
+  border: 3px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.color-primary.is-inverted .loading-animation .loader {
+  border: 3px solid var(--primary-500);
+  border-bottom-color: white;
+}
+
+.loading-animation {
+  @apply relative;
+  @apply top-1;
+}

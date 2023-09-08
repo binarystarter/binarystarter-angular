@@ -1,0 +1,23 @@
+.app-tag.bg-primary {
+  background: var(--primary-500);
+}
+
+.app-tag.bg-secondary {
+  background: var(--accent-500);
+}
+
+.app-tag.bg-default {
+  background: var(--grey-500);
+}
+
+.app-tag.bg-danger {
+  background: var(--red-500);
+}
+
+.app-tag.bg-success {
+  background: var(--success-500);
+}
+
+.app-tag.bg-warn {
+  background: var(--warn-500);
+}

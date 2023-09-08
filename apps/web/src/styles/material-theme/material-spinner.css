@@ -1,0 +1,11 @@
+/** Style Material Spinner */
+
+.app .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle,
+.app .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+  stroke: var(--primary-500);
+}
+
+.mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle,
+.mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+  stroke: var(--primary-500) !important;
+}

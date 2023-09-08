@@ -1,0 +1,7 @@
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: var(--success-500);
+}
+
+.mat-step-header .mat-step-icon-selected {
+  background-color: var(--primary-500);
+}

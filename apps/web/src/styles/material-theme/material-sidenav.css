@@ -1,0 +1,21 @@
+/** Mat sidenav and mat drawer */
+.mat-sidenav-container .mat-drawer-content {
+  @apply flex;
+  @apply flex-col;
+  @apply h-full;
+}
+
+.mat-drawer.app-drawer {
+  background: linear-gradient(0deg, rgb(255 255 255) 0%, rgb(252 252 252) 100%);
+  border-right: 1px solid var(--grey-a100);
+  padding: 0;
+}
+
+.mat-sidenav-container {
+  height: 100vh;
+}
+
+.mat-drawer:not(.mat-drawer-side) {
+  /*box-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));*/
+  box-shadow: inherit;
+}

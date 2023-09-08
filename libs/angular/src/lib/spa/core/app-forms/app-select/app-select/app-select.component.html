@@ -1,0 +1,16 @@
+<div [formGroup]="group" class="mb-2">
+  <mat-form-field subscriptSizing="dynamic" hintLabel="">
+    <mat-label>{{ label }}</mat-label>
+
+    <mat-select formControlName="{{ name }}">
+      <mat-option *ngFor="let o of options" [value]="o.value">
+        {{ o.viewValue }}
+      </mat-option>
+    </mat-select>
+
+    <mat-hint align="start">{{ hint }}</mat-hint>
+    <mat-error *ngIf="control.errors && control.errors[name] && control.errors[name]?.length > 0">{{
+      control.errors[name][0]
+    }}</mat-error>
+  </mat-form-field>
+</div>

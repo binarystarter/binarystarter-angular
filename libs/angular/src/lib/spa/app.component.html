@@ -1,0 +1,77 @@
+<mat-drawer-container
+  [hasBackdrop]="mobileQuery.matches"
+  class="app-drawer-container"
+>
+  <mat-drawer #appDrawer class="app-drawer" [opened]="drawerInitialState">
+    <div class="flex flex-grow flex-col px-5 py-4" *ngIf="!loading">
+      <web-branding
+        darkSrc="/assets/images/logo-dark.png"
+        lightSrc="/assets/images/logo-light.png"
+        width="190"
+      />
+
+      <div class="my-4">
+        <mat-divider />
+      </div>
+
+      <ng-container>
+        <web-nav-link (click)="checkMobile()" to="/" icon="home">
+          Home
+        </web-nav-link>
+
+        <web-nav-link (click)="checkMobile()" [to]="staticPaths.faq">
+          FAQ
+        </web-nav-link>
+
+        <web-nav-link
+          (click)="checkMobile()"
+          [to]="dashboardPaths.dashboard"
+          [full]="true"
+          icon="dashboard"
+        >
+          Administration
+        </web-nav-link>
+
+        <web-nav-link
+          (click)="checkMobile()"
+          [to]="authPaths.logout"
+          icon="logout"
+        >
+          Logout
+        </web-nav-link>
+      </ng-container>
+    </div>
+  </mat-drawer>
+
+  <mat-drawer-content
+    class="app-drawer-content w-full"
+    [style.margin-left.px]="drawerWidth"
+  >
+    <div class="flex flex-col grow items-center justify-center" *ngIf="loading">
+      <app-loading />
+    </div>
+
+    <div
+      class="md:px-7 max-w-[1300px] w-full mx-auto flex flex-col flex-grow"
+      *ngIf="!loading"
+    >
+      <div class="flex justify-start">
+        <app-button (click)="toggleDrawer()">
+          <mat-icon [style]="['transform: scaleX(-1)']">menu_open</mat-icon>
+          Toggle
+        </app-button>
+      </div>
+
+      <ng-container>
+        <router-outlet />
+      </ng-container>
+    </div>
+
+    <div
+      class="container mx-auto flex flex-grow flex-col"
+      *ngIf="!loading && error"
+    >
+      <web-error-message [msg]="error" />
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
