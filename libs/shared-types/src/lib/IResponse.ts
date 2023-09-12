@@ -1,4 +1,4 @@
-import { User } from '../payload-types';
+import { IUser } from './IUser';
 
 export interface ISuccessResponse<T> {
   success: true;
@@ -26,7 +26,7 @@ export type CreateDocSuccessPayload<T> = { message: string; doc: T };
 export interface ILoginResponse {
   exp: number;
   token: string;
-  user: User;
+  user: IUser;
 }
 
 export type MeResponse = ILoginResponse | { user: null };

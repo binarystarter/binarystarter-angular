@@ -20,14 +20,5 @@ export class ApiEndpointsService {
       verify: (token: string) =>
         `${this.join(this.base, 'auth/verify')}/${token}`,
     },
-    ai: {
-      chat: {
-        sendUserMessage: this.join(this.base, 'ai/chat/user-message'),
-        getAssistantResponse: this.join(
-          this.base,
-          'ai/chat/assistant-response',
-        ),
-      },
-    },
   };
 }

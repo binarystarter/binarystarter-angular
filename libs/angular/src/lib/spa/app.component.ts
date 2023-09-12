@@ -18,31 +18,11 @@ import { AppLayoutModule } from '../layout/layout.module';
 import { AuthModule } from './core/auth/auth.module';
 import AccountModule from './account/account.module';
 import { AppFormsModule } from './core/app-forms/app-forms.module';
-
-import { init } from '@sentry/angular';
-import { environment } from '../environments/environment';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { BrandingComponent } from '../layout/branding/branding.component';
 import { StaticPaths } from '../ssr/static-routing.module';
 import { AuthPaths } from './core/auth/auth.routes';
 import { DashboardPaths } from './core/api/payload-paths';
-
-init({
-  dsn: `${environment.web.sentry_dsn}`,
-  environment: environment.app.stage,
-  release: new Date().getTime().toString(),
-  integrations: [
-    // new BrowserTracing({
-    //   tracePropagationTargets: ["localhost:8080", "localhost", /^\//],
-    //   routingInstrumentation: routingInstrumentation,
-    // }),
-  ],
-
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
-  tracesSampleRate: 1.0,
-});
 
 @Component({
   standalone: true,

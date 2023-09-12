@@ -48,7 +48,6 @@ export type EnvironmentType = {
     users_slug: string;
   };
   web: {
-    sentry_dsn: string;
     url: string;
   };
 };

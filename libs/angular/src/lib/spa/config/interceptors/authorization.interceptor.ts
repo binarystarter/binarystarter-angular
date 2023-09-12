@@ -11,10 +11,9 @@ import { firstValueFrom, from, lastValueFrom, Observable } from 'rxjs';
 import { PayloadApiEndpointsService } from '../../core/api/payload-api-endpoints.service';
 import jwtDecode from 'jwt-decode';
 import { RefreshResponse } from '../../core/api/payload.service';
-import { captureException } from '@sentry/angular-ivy';
-import { IResponse, User } from '@binarystarter-angular/shared-types';
+import { IResponse, IUser } from '@binarystarter-angular/shared-types';
 
-type DecodedUser = Pick<User, 'email' | 'id' | 'roles'> & {
+type DecodedUser = Pick<IUser, 'email' | 'id' | 'roles'> & {
   iat: number;
   exp: number;
   collection: string;
@@ -80,7 +79,6 @@ export class AuthorizationInterceptor implements HttpInterceptor {
         if (response.success) {
           idToken = response.payload.refreshedToken;
         } else {
-          await captureException(response);
           throw new Error('Something went wrong refreshing.');
         }
       }

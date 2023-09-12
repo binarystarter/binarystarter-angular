@@ -1,14 +1,14 @@
 import { UserRoles } from '@binarystarter-angular/backend-only/payloadcms';
 import { Request, Response } from 'express';
 import payload from 'payload';
-import { User } from '@binarystarter-angular/shared-types';
+import { IUser } from '@binarystarter-angular/shared-types';
 
 export const registerPath = 'register';
 export const register = async (req: Request, res: Response) => {
   const userData: Pick<
-    User,
-    'firstName' | 'lastName' | 'username' | 'email' | 'password'
-  > & { confirmPassword: string } = req.body;
+    IUser,
+    'firstName' | 'lastName' | 'username' | 'email'
+  > & { password: string; confirmPassword: string } = req.body;
 
   await payload.create({
     collection: 'users',

@@ -8,7 +8,6 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { captureException } from '@sentry/angular';
 
 @Component({
   selector: 'app-button',
@@ -78,8 +77,6 @@ export class AppButtonComponent implements OnChanges, AfterViewInit {
         this.loading = false;
       } catch (error) {
         this.loading = false;
-
-        captureException(error);
       }
     }
   }

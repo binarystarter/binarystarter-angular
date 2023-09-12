@@ -19,7 +19,6 @@ import {
 } from 'rxjs';
 import { isArray, isString, isUndefined } from 'lodash';
 import { IResponse } from '@binarystarter-angular/shared-types';
-import { captureException } from '@sentry/angular-ivy';
 
 @Injectable()
 export class HttpErrorHandlingInterceptor implements HttpInterceptor {
@@ -39,7 +38,6 @@ export class HttpErrorHandlingInterceptor implements HttpInterceptor {
               // handle very strange behavior when token is expiring while
               // redirecting from server dashboard to frontend domain
               if (response.status === 0) {
-                captureException(new Error('API might not be available'));
                 return of();
               }
 

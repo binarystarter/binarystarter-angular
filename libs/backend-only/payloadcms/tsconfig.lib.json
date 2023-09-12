@@ -11,6 +11,6 @@
   "include": [
     "src/**/*.ts",
     "src/lib/components/index.ts",
-    "../shared-types/src/payload-types.ts"
+    "../backend-only/payloadcms/src/payload-types.ts"
   ]
 }

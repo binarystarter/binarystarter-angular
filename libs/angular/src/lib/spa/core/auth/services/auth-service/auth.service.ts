@@ -7,7 +7,7 @@ import { ApiEndpointsService } from '../../../api/api-endpoints.service';
 import {
   ILoginResponse,
   IResponse,
-  User,
+  IUser,
   SuccessMessagePayload,
 } from '@binarystarter-angular/shared-types';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -16,8 +16,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root',
 })
 export class AuthService {
-  private _userSubject: BehaviorSubject<User | null | undefined> =
-    new BehaviorSubject<User | null | undefined>(undefined);
+  private _userSubject: BehaviorSubject<IUser | null | undefined> =
+    new BehaviorSubject<IUser | null | undefined>(undefined);
   auth = environment.app.auth;
 
   constructor(
@@ -63,7 +63,7 @@ export class AuthService {
   }
 
   private fetchUser() {
-    return new Observable<User | null>((subscriber) => {
+    return new Observable<IUser | null>((subscriber) => {
       this.payloadService
         .me()
         .pipe(
