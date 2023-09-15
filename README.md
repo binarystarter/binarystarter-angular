@@ -1,16 +1,20 @@
-# Angular, Payload CMS, ExpressJs - Free Open-Source Boilerplate
+# Angular 16, Payload CMS, ExpressJs - Free Open-Source Full-Stack Boilerplate
 
 **✨ Enterprise Level Web Application Development Starter without the complexity.**
 
 Secure, Stable, Automated.
 
-## Integrated and Ready to Use Angular Material and TailwindCSS
-
-There’s no relationship without any compromises. It’s available in both real life and between Tailwind CSS and Angular Materials.
-
-Although you cannot modify angular material components using Tailwind CSS, you can use it everywhere else!
-
-Tailwind CSS and Angular Material both come out of the box, preconfigured and ready to be used. 
+## Features
+- Payload CMS (headless open-source CMS)
+- I18n
+- TailwindCSS
+- Angular Material
+- Lazy Loading
+- Server Side Rendering App
+- Client Side App running on `/app`
+- Authentication, Authorization
+- Standalone Components
+- Pnpm, esbuild
 
 ## Authentication and Authorization
 
