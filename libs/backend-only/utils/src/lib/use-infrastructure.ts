@@ -30,7 +30,7 @@ export const useInfrastructure = () => ({
     },
     mongo: {
       port: out.parsed.mongo_port,
-      host_port: out.parsed.mongo_host_port,
+      host: out.parsed.mongo_host,
       password: out.parsed.mongo_password,
       username: out.parsed.mongo_username,
       db: out.parsed.mongo_db,

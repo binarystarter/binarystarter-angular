@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "payload:types": "cd ./apps/express && npx payload generate:types && npx payload generate:graphQLSchema && cd ../../",
-    "mongo": "docker-compose up",
+    "db:serve": "docker-compose up",
     "express:serve": "pnpm run payload:types && nx run express:serve",
     "web:serve": "nx serve-ssr web",
     "web:build": "nx run web:build:production && nx run web:server:production && nx run web:prerender:production",
