@@ -1,8 +1,13 @@
 # Angular 16, Payload CMS, ExpressJs - Free Open-Source Full-Stack Boilerplate
-
-**✨ Enterprise Level Web Application Development Starter without the complexity.**
+**✨ Professional Web Application Development Starter without the complexity.**
 
 Secure, Stable, Automated.
+
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+      <img src="https://binarystarter.com/assets/images/angular/free-architecture-nodejs.png" width="500px" style="width: '100%'; height: auto;"/>
+      <img src="https://binarystarter.com/assets/images/angular/free-architecture-angular.png" width="500px" style="width: '100%'; height: auto;"/>
+</div>
+
 
 # Features
 - Payload CMS (headless open-source CMS)
@@ -18,6 +23,8 @@ Secure, Stable, Automated.
 - Pnpm, esbuild
 
 # Installation
+For full documentation refer to [binarystarter.com](https://binarystarter.com/s/documentation)
+
 #### Resources
 
 - [Intro to nx](https://nx.dev/getting-started/intro)
@@ -43,6 +50,9 @@ Run in a terminal `git clone https://github.com/binarystarter/binarystarter-angu
 
 Run `pnpm install`.
 
+### Start the app
+Documentation: [binarystarter.com](https://binarystarter.com/s/documentation)
+
 # The app
 
 ### Angular
@@ -57,7 +67,7 @@ ExpressJS endpoints can be accessed from HTTP://localhost:8080/...
 
 # Out-of-the-box
 
-# Authentication and Authorization
+## Authentication and Authorization
 
 The authentication system is based on Passport Js.
 
