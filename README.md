@@ -4,8 +4,8 @@
 Secure, Stable, Automated.
 
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
-      <img src="https://binarystarter.com/assets/images/angular/free-architecture-nodejs.png" width="500px" style="width: '100%'; height: auto;"/>
-      <img src="https://binarystarter.com/assets/images/angular/free-architecture-angular.png" width="500px" style="width: '100%'; height: auto;"/>
+      <img src="https://binarystarter.com/assets/images/angular/free-architecture-nodejs.png" width="380px" style="width: '100%'; height: auto;"/>
+      <img src="https://binarystarter.com/assets/images/angular/free-architecture-angular.png" width="380px" style="width: '100%'; height: auto;"/>
 </div>
 
 
