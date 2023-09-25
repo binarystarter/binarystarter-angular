@@ -43,6 +43,18 @@ Run in a terminal `git clone https://github.com/binarystarter/binarystarter-angu
 
 Run `pnpm install`.
 
+# The app
+
+### Angular
+The angular app can be accessed using http://localhost:4200 - the Server Side Rendered app
+The Angular client-side app can be accessed at HTTP://localhost:4200/app/... and HTTP://localhost:4200/auth/...
+
+### Payload CMS
+The payloadcms administration panel can be accessed at HTTP://localhost:8080/admin
+
+### ExpressJS
+ExpressJS endpoints can be accessed from HTTP://localhost:8080/...
+
 # Out-of-the-box
 
 # Authentication and Authorization
