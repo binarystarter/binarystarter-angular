@@ -22,6 +22,9 @@ Secure, Stable, Automated.
 - Standalone Components
 - Pnpm, esbuild
 
+<img src="https://binarystarter.com/assets/images/angular/dashboard-payload.png" width="420px"/>
+
+
 # Installation
 For full documentation refer to [binarystarter.com](https://binarystarter.com/s/documentation)
 
