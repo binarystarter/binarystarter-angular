@@ -4,19 +4,48 @@
 
 Secure, Stable, Automated.
 
-## Features
+# Features
 - Payload CMS (headless open-source CMS)
 - I18n
 - TailwindCSS
 - Angular Material
 - Lazy Loading
 - Server Side Rendering App
-- Client Side App running on `/app`
+- Client Side App
 - Authentication, Authorization
+- Lazy loaded Dashboard for authenticated users
 - Standalone Components
 - Pnpm, esbuild
 
-## Authentication and Authorization
+# Installation
+#### Resources
+
+- [Intro to nx](https://nx.dev/getting-started/intro)
+- [Install nx](https://nx.dev/getting-started/installation)
+- [Why nx?](https://nx.dev/getting-started/why-nx)
+- [nx: Run Tasks](https://nx.dev/core-features/run-tasks)
+- [nx: Mental Model](https://nx.dev/concepts/mental-model)
+- [pnpm commands](https://github.com/nvm-sh/nvm#usage)
+
+#### Prerequisites:
+
+- [Install pnpm](https://pnpm.io/installation)
+- [Install nx cli globally](https://nx.dev/getting-started/installation#installing-nx-globally)
+- Install nodejs v18
+
+Let’s get started! 🚀
+
+#### Clone GitHub Repository
+
+Run in a terminal `git clone https://github.com/binarystarter/binarystarter-angular.git`. To specify another folder name, you can do a direct `git clone https://github.com/binarystarter/binarystarter-angular.git <project_name>`. 
+
+### Install modules
+
+Run `pnpm install`.
+
+# Out-of-the-box
+
+# Authentication and Authorization
 
 The authentication system is based on Passport Js.
 
@@ -49,7 +78,7 @@ ExpressJs is tightly integrated with PayloadCMS, but you can still add your own 
 We believe in TypeScript, hence everything is based on TypeScript.
 
 
-## Connect with me
+# Connect with me
 
 - [Twitter](https://twitter.com/florinmtsc)
 - [Website](https://binarycentrum.com/)
