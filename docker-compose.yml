@@ -16,7 +16,7 @@ services:
     networks:
       - webnet
     ports:
-      - ${mongo_port}:${mongo_port}
+      - ${mongo_port}:27017
 networks:
   webnet:
     driver: bridge

@@ -4,8 +4,6 @@ const out = config({
   path: `${process.cwd()}/../../.env`,
 });
 
-console.log(out);
-
 export const useInfrastructure = () => ({
   configuration: {
     app: {
