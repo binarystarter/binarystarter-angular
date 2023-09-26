@@ -5,6 +5,8 @@ Secure, Stable, Automated.
 
 ### **[VIEW DEMO](https://binarystarter.com/s/angular)**
 
+**[Join Discord Community](https://discord.gg/ERPCG8W6)**
+
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
       <img src="https://binarystarter.com/assets/images/angular/free-architecture-nodejs.png" width="380px" style="width: '100%'; height: auto;"/>
       <img src="https://binarystarter.com/assets/images/angular/free-architecture-angular.png" width="380px" style="width: '100%'; height: auto;"/>
