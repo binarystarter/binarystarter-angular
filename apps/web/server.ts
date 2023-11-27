@@ -3,10 +3,12 @@ import 'zone.js/dist/zone-node';
 import { APP_BASE_HREF } from '@angular/common';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
+import * as cors from 'cors';
 import { existsSync } from 'fs';
 import { join, resolve } from 'path';
 import * as compression from 'compression';
 import { AngularServerBootstrap } from './src/main.server';
+import { environment, production } from '@binarystarter-angular/angular';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -29,6 +31,12 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
+  server.use(
+    cors({
+      origin: [environment.web.url, production.web.url],
+    }),
+  );
+
   // Serve static files from /browser
   server.get(
     '*.*',
@@ -37,27 +45,7 @@ export function app(): express.Express {
     }),
   );
 
-  // All regular routes use the Universal engine
-  server.get(
-    '/app*',
-    express.static(distFolder, {
-      maxAge: '30d',
-    }),
-    (req, res) => {
-      res.sendFile(resolve(distFolder, 'index.html'));
-    },
-  );
-  server.get(
-    '/auth*',
-    express.static(distFolder, {
-      maxAge: '30d',
-    }),
-    (req, res) => {
-      res.sendFile(resolve(distFolder, 'index.html'));
-    },
-  );
-
-  server.get('*', (req, res) => {
+  server.get('*', function (req, res, next) {
     res.render(indexHtml, {
       req,
       providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }],

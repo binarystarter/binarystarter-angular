@@ -11,8 +11,6 @@ export const useInfrastructure = () => ({
       allowed_headers: out.parsed.allowed_headers,
       name: out.parsed.app_name,
       auth: out.parsed.app_auth,
-      nodeVersion: out.parsed.app_nodeVersion,
-      domain: out.parsed.app_domain,
     },
     api: {
       url: out.parsed.api_url,

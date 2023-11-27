@@ -25,6 +25,12 @@ export default buildConfig({
     PostsCollection,
     TagsCollection,
   ],
+  routes: {
+    admin: '/admin',
+    api: '/api',
+    graphQL: '/graphql',
+    graphQLPlayground: '/playground',
+  },
   rateLimit: {
     window: 90000,
     max: 500,
@@ -32,7 +38,7 @@ export default buildConfig({
   },
   admin: {
     user: UsersCollection.slug,
-    buildPath: path.resolve('../../dist/payload'),
+    buildPath: path.resolve(__dirname, '../../dist/payload'),
     meta: {
       titleSuffix: process.env.app_name || '',
       favicon: `${process.env.web_url}/assets/favicon.ico`,
