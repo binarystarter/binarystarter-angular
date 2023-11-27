@@ -18,7 +18,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AuthService {
   private _userSubject: BehaviorSubject<IUser | null | undefined> =
     new BehaviorSubject<IUser | null | undefined>(undefined);
-  auth = environment.app.auth;
 
   constructor(
     private http: HttpClient,
@@ -95,25 +94,21 @@ export class AuthService {
   }
 
   async login(username: string, password: string) {
-    switch (this.auth) {
-      default: {
-        const res = await firstValueFrom(
-          this.payloadService.login(username, password),
-        );
+    const res = await firstValueFrom(
+      this.payloadService.login(username, password),
+    );
 
-        if (res.success) {
-          this.saveSession(res.payload.token);
-          await firstValueFrom(this.fetchUser());
-        } else {
-          this._snackBar.open(res.payload[0].message, '', {
-            panelClass: 'error',
-            duration: 4000,
-          });
-        }
-
-        return res;
-      }
+    if (res.success) {
+      this.saveSession(res.payload.token);
+      await firstValueFrom(this.fetchUser());
+    } else {
+      this._snackBar.open(res.payload[0].message, '', {
+        panelClass: 'error',
+        duration: 4000,
+      });
     }
+
+    return res;
   }
 
   logout() {

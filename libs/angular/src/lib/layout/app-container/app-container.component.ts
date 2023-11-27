@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'web-container',
+  selector: 'web-app-container',
+  standalone: true,
   templateUrl: './app-container.component.html',
 })
 export class AppContainerComponent {}

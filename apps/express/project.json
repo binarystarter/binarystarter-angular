@@ -50,7 +50,36 @@
           "codeCoverage": true
         }
       }
+    },
+    "payload": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx payload",
+        "cwd": "apps/express"
+      }
+    },
+    "payload:migrate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx payload migrate",
+        "cwd": "apps/express"
+      }
+    },
+    "payload:build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx payload build",
+        "cwd": "apps/express"
+      }
+    },
+    "payload:types": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx payload generate:types && npx payload generate:graphQLSchema",
+        "cwd": "apps/express"
+      }
     }
   },
+
   "tags": []
 }

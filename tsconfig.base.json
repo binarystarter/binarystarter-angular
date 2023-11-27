@@ -21,14 +21,14 @@
       "@binarystarter-angular/backend-only/crypto": [
         "libs/backend-only/crypto/src/index.ts"
       ],
-      "@binarystarter-angular/backend-only/infrastructure": [
-        "libs/backend-only/infrastructure/src/index.ts"
-      ],
       "@binarystarter-angular/backend-only/payloadcms": [
         "libs/backend-only/payloadcms/src/index.ts"
       ],
       "@binarystarter-angular/backend-only/utils": [
         "libs/backend-only/utils/src/index.ts"
+      ],
+      "@binarystarter-angular/shared-constants": [
+        "libs/shared-constants/src/index.ts"
       ],
       "@binarystarter-angular/shared-types": ["libs/shared-types/src/index.ts"]
     }

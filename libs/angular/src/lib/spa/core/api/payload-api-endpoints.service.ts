@@ -8,6 +8,12 @@ import { environment } from '../../../environments/environment';
 export class PayloadApiEndpointsService {
   private usersSlug: string = environment.payload.users_slug;
   private base: string = join([environment.api.url, 'api'], '/');
+  private slugs = {
+    pages: 'pages',
+    tags: 'tags',
+    posts: 'posts',
+    categories: 'categories',
+  };
 
   constructor() {}
 
@@ -26,6 +32,9 @@ export class PayloadApiEndpointsService {
     },
     user: {
       update: (userId: string) => `${this.create(this.usersSlug)}/${userId}`,
+    },
+    pages: {
+      get: this.create(this.slugs.pages),
     },
   };
 }

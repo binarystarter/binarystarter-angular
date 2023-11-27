@@ -8,6 +8,8 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
+import { Router } from '@angular/router';
+import { AngularAppService } from '../../spa/angular-app.service';
 
 @Component({
   selector: 'app-button',
@@ -23,17 +25,22 @@ export class AppButtonComponent implements OnChanges, AfterViewInit {
     | 'default'
     | 'danger'
     | 'success'
+    | 'white'
     | 'warn'
     | undefined = undefined;
   @Input() inverted: boolean = false;
   @Input() disabled: boolean = false;
   @Input() action: () => Promise<any>;
+  @Input() href: string = '';
   @ViewChild('btnEl') public btnEl: ElementRef<HTMLButtonElement>;
   @Input() icon?: string;
 
   loading: boolean = false;
 
-  constructor() {
+  constructor(
+    private router: Router,
+    private appService: AngularAppService,
+  ) {
     // this.class += ` color-${this.color} ${this.inverted ? "is-inverted" : ""}`;
   }
 
@@ -77,6 +84,12 @@ export class AppButtonComponent implements OnChanges, AfterViewInit {
         this.loading = false;
       } catch (error) {
         this.loading = false;
+      }
+    } else if (this.href) {
+      if (this.href.includes('mailto') || this.href.includes('tel')) {
+        this.appService.nativeWindow.location.href = this.href;
+      } else {
+        this.router.navigate([this.href]);
       }
     }
   }

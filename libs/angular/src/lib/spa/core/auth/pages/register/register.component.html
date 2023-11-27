@@ -50,10 +50,15 @@
           [group]="form"
         ></app-input>
 
-        <div class="flex items-center justify-center mt-4 mb-2">
-          <app-submit-button [form]="form" [submitFn]="register"
-            >Create Account</app-submit-button
-          >
+        <div class="flex flex-col items-center justify-center mt-4 mb-2">
+          <app-submit-button [form]="form" [submitFn]="register">
+            Create Account
+          </app-submit-button>
+          <a href="{{ authPaths.login }}">
+            <p class="text-primary-500 underline font-medium mt-4">
+              Login Instead
+            </p>
+          </a>
         </div>
       </app-form>
     </div>

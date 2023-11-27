@@ -1,3 +1,9 @@
-<a class="app-link transition-all {{ style }} inline-block align-baseline font-medium text-sm " href="{{ to }}">
+<a
+  class="app-link transition-all {{
+    style
+  }} inline-block align-baseline font-medium text-sm "
+  href="{{ to }}"
+  [ngClass]="class"
+>
   <ng-content></ng-content>
 </a>

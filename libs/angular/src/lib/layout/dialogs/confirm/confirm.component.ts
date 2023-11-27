@@ -50,7 +50,6 @@ export class ConfirmComponent {
   };
 
   cancel = () => {
-    console.log('Cancel');
     if (this.onCancel) {
       this.onCancel(this.dialogRef);
     } else {

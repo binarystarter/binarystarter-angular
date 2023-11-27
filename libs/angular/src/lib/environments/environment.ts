@@ -2,17 +2,9 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { EnvironmentType } from './EnvironmentType';
+import { sharedEnvironment } from '@binarystarter-angular/shared-constants';
 
-export const environment: EnvironmentType = {
-  production: false,
-  app: { name: 'binarystarter-angular', stage: 'dev', auth: 'passportjs' },
-  api: { url: 'http://localhost:8080' },
-  payload: { users_slug: 'users' },
-  web: {
-    url: 'http://localhost:4200',
-  },
-};
+export const environment = sharedEnvironment;
 
 /*
  * For easier debugging in development mode, you can import the following file

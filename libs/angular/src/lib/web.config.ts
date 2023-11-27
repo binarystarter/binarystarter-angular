@@ -1,37 +1,35 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import {
-  provideRouter,
-  withEnabledBlockingInitialNavigation,
-} from '@angular/router';
+import { provideRouter } from '@angular/router';
 import { webRoutes } from './web.routes';
-
 import {
-  HTTP_INTERCEPTORS,
   provideHttpClient,
+  withFetch,
+  withInterceptors,
   withInterceptorsFromDi,
 } from '@angular/common/http';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthorizationInterceptor } from './spa/config/interceptors/authorization.interceptor';
-import { HttpErrorHandlingInterceptor } from './spa/config/interceptors/http.interceptor';
+import { authorizationInterceptor } from './spa/config/interceptors/authorization.interceptor';
+import { httpErrorHandlingInterceptor } from './spa/config/interceptors/http.interceptor';
 import { AngularAppService } from './spa/angular-app.service';
+import { provideClientHydration } from '@angular/platform-browser';
+import { apiProviders } from './spa/core/api/api.providers';
 
 export const webConfig: ApplicationConfig = {
   providers: [
     AngularAppService,
-    provideRouter(webRoutes, withEnabledBlockingInitialNavigation()),
+    apiProviders(),
+    provideRouter(webRoutes),
+    provideClientHydration(),
     importProvidersFrom([BrowserAnimationsModule]),
-    provideHttpClient(withInterceptorsFromDi()),
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthorizationInterceptor,
-      multi: true,
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpErrorHandlingInterceptor,
-      multi: true,
-    },
+    provideHttpClient(
+      withFetch(),
+      withInterceptorsFromDi(),
+      withInterceptors([
+        authorizationInterceptor,
+        httpErrorHandlingInterceptor,
+      ]),
+    ),
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' },

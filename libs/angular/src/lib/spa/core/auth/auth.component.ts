@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthPaths } from './auth.routes';
+import { AuthPaths } from '@binarystarter-angular/shared-constants';
 
 @Component({
   selector: 'web-auth',

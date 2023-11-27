@@ -27,18 +27,18 @@ import { AlertComponent } from './alert/alert.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NavLinkComponent } from './nav-link/nav-link.component';
+import { H1Component } from './h1/h1.component';
+import { H2Component } from './h2/h2.component';
 
 @NgModule({
   declarations: [
     AppButtonComponent,
     AppLinkComponent,
     LoadingComponent,
-    AppContainerComponent,
     ErrorMessageComponent,
     TagComponent,
     ConfirmComponent,
     AlertComponent,
-    NavLinkComponent,
   ],
   imports: [
     CommonModule,
@@ -60,6 +60,10 @@ import { NavLinkComponent } from './nav-link/nav-link.component';
     MatStepperModule,
     MatTableModule,
     MatPaginatorModule,
+    H1Component,
+    H2Component,
+    AppContainerComponent,
+    NavLinkComponent,
   ],
   exports: [
     // material
@@ -86,12 +90,14 @@ import { NavLinkComponent } from './nav-link/nav-link.component';
     AppButtonComponent,
     AppLinkComponent,
     LoadingComponent,
-    AppContainerComponent,
     ErrorMessageComponent,
     TagComponent,
     ConfirmComponent,
     AlertComponent,
     NavLinkComponent,
+    H1Component,
+    H2Component,
+    AppContainerComponent,
   ],
 })
 export class AppLayoutModule {}

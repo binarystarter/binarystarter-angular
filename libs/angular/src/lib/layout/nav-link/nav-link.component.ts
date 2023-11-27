@@ -1,11 +1,15 @@
 import { Component, Input } from '@angular/core';
 import { environment } from '../../environments/environment';
+import { AppLayoutModule } from '../layout.module';
 
 @Component({
   selector: 'web-nav-link',
+  standalone: true,
+  imports: [AppLayoutModule],
   templateUrl: './nav-link.component.html',
 })
 export class NavLinkComponent {
+  @Input() target: string = '';
   @Input() href: string = '';
   @Input() class: string = '';
   @Input() full: boolean = false;

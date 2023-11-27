@@ -14,13 +14,13 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome binarystarter-angular',
+      'Welcome binarystarter.com',
     );
   });
 
-  it(`should have as title 'binarystarter-angular'`, () => {
+  it(`should have as title 'binarystarter.com'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('binarystarter-angular');
+    expect(app.title).toEqual('binarystarter.com');
   });
 });

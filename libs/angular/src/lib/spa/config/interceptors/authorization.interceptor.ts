@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
+import { PLATFORM_ID, inject } from '@angular/core';
 import { differenceInSeconds } from 'date-fns';
 import {
   HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor,
   HttpClient,
+  HttpHandlerFn,
+  HttpInterceptorFn,
 } from '@angular/common/http';
-import { firstValueFrom, from, lastValueFrom, Observable } from 'rxjs';
+import { firstValueFrom, from, lastValueFrom, Observable, of } from 'rxjs';
 import { PayloadApiEndpointsService } from '../../core/api/payload-api-endpoints.service';
 import jwtDecode from 'jwt-decode';
 import { RefreshResponse } from '../../core/api/payload.service';
 import { IResponse, IUser } from '@binarystarter-angular/shared-types';
+import { isPlatformBrowser } from '@angular/common';
 
 type DecodedUser = Pick<IUser, 'email' | 'id' | 'roles'> & {
   iat: number;
@@ -32,30 +32,43 @@ const refreshToken = async (http: HttpClient, route: string) => {
   return firstValueFrom(http.post<IResponse<RefreshResponse>>(route, {}));
 };
 
-/**
- * The injecatble responsible for setting the token if it exists before each request is made.
- */
-@Injectable()
-export class AuthorizationInterceptor implements HttpInterceptor {
-  constructor(
-    private http: HttpClient,
-    private payloadApiEndpoints: PayloadApiEndpointsService,
-  ) {}
+function setHeaders(
+  idToken: string,
+  currentReq: HttpRequest<unknown>,
+): HttpRequest<unknown> {
+  if (idToken) {
+    localStorage.setItem('token', idToken);
 
-  intercept(
-    oldReq: HttpRequest<any>,
-    next: HttpHandler,
-  ): Observable<HttpEvent<IResponse<any>>> {
-    return from(this._handleAuthorization(oldReq, next));
+    currentReq.headers.set('Authorization', 'JWT ' + idToken);
+
+    const newReq = currentReq.clone({
+      headers: currentReq.headers.set('Authorization', 'JWT ' + idToken),
+    });
+
+    return newReq;
   }
 
-  /**
-   * This callback handles the JWT authorization and authentication token
-   *
-   * @param request
-   * @param next
-   */
-  async _handleAuthorization(request: HttpRequest<any>, next: HttpHandler) {
+  return currentReq;
+}
+
+/**
+ * The injecatble responsible for setting the token if it exists before each request is made.
+ *
+ * handles the JWT authorization and authentication token
+ */
+export const authorizationInterceptor: HttpInterceptorFn = (
+  request: HttpRequest<unknown>,
+  next: HttpHandlerFn,
+) => {
+  const http: HttpClient = inject(HttpClient);
+  const payloadApiEndpoints: PayloadApiEndpointsService = inject(
+    PayloadApiEndpointsService,
+  );
+
+  const platformId: Object = inject(PLATFORM_ID);
+  const isBrowser: boolean = isPlatformBrowser(platformId);
+
+  if (isBrowser) {
     let idToken = localStorage.getItem('token');
 
     if (idToken) {
@@ -70,28 +83,26 @@ export class AuthorizationInterceptor implements HttpInterceptor {
         remainingSeconds < 60 &&
         !request.urlWithParams.includes('refresh-token')
       ) {
-        // Call the refresh endpoint to get a new token
-        const response = await refreshToken(
-          this.http,
-          this.payloadApiEndpoints.routes.auth.refresh,
-        );
+        return new Observable(() => {
+          // Call the refresh endpoint to get a new token
+          from(
+            refreshToken(http, payloadApiEndpoints.routes.auth.refresh),
+          ).subscribe({
+            next: (response) => {
+              if (response.success) {
+                idToken = response.payload.refreshedToken;
+              } else {
+                throw new Error('Something went wrong refreshing.');
+              }
 
-        if (response.success) {
-          idToken = response.payload.refreshedToken;
-        } else {
-          throw new Error('Something went wrong refreshing.');
-        }
+              return next(setHeaders(idToken, request));
+            },
+          });
+        });
       }
+      return next(setHeaders(idToken, request));
     }
-
-    if (idToken) {
-      localStorage.setItem('token', idToken);
-
-      request = request.clone({
-        headers: request.headers.set('Authorization', 'JWT ' + idToken),
-      });
-    }
-
-    return lastValueFrom(next.handle(request));
   }
-}
+
+  return next(request);
+};

@@ -1,8 +1,14 @@
+import {
+  AuthPaths,
+  sharedEnvironment,
+} from '@binarystarter-angular/shared-constants';
 import React from 'react';
+
+const webUrl = sharedEnvironment.web.url;
 
 export const ReturnToWebComponent = () => {
   const redirectToWeb = () => {
-    window.location.href = `http://localhost:4200/auth/login`;
+    window.location.href = `${webUrl}${AuthPaths.login}`;
   };
 
   return (

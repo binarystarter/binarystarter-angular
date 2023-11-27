@@ -18,17 +18,28 @@
             [group]="form"
           ></app-input>
 
-          <div class="flex items-center justify-between mt-4 mb-2">
+          <div class="flex flex-row justify-center mt-4">
             <app-submit-button
               successMessage="Welcome back!"
               [form]="form"
               [submitFn]="login"
-              >Login</app-submit-button
             >
+              Login
+            </app-submit-button>
+          </div>
 
-            <app-link to="{{ authPaths.forgotPassword }}" color="primary"
-              >Forgot Password</app-link
+          <div class="flex items-center justify-between mt-4 mb-2">
+            <app-link
+              to="{{ authPaths.register }}"
+              color="primary"
+              class="text-right"
             >
+              Create Account
+            </app-link>
+
+            <app-link to="{{ authPaths.forgotPassword }}" color="primary">
+              Forgot Password
+            </app-link>
           </div>
         </app-form>
       </div>

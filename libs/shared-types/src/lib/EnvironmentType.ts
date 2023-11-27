@@ -38,7 +38,6 @@ export type EnvironmentType = {
   production: boolean;
   app: {
     stage: string;
-    auth: string;
     name: string;
   };
   api: {

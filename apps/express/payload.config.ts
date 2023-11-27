@@ -9,15 +9,26 @@ import {
   ReturnToWebComponent,
   TagsCollection,
   UsersCollection,
-} from '@binarystarter-angular/backend-only/payloadcms';
-import dotenv from 'dotenv';
+} from 'apps/express/src/payloadcms/src';
+import { webpackBundler } from '@payloadcms/bundler-webpack';
+import { slateEditor } from '@payloadcms/richtext-slate';
+import { mongooseAdapter } from '@payloadcms/db-mongodb';
 
-dotenv.config({
+require('dotenv').config({
   path: '../../.env',
 });
 
 export default buildConfig({
   serverURL: process.env.api_url,
+  db: mongooseAdapter({
+    url: process.env.mongo_url,
+    connectOptions: {
+      user: process.env.mongo_username,
+      pass: process.env.mongo_password,
+      dbName: process.env.mongo_db,
+    },
+  }),
+  editor: slateEditor({}),
   collections: [
     UsersCollection,
     CategoriesCollection,
@@ -48,31 +59,35 @@ export default buildConfig({
       logout: {
         Button: RedirectToFrontendLogoutButton,
       },
-      routes: [
-        {
+      views: {
+        'redirect-to-frontend-login': {
           Component: RedirectToFrontendLogin,
           path: '/login',
         },
-      ],
+      },
     },
+    bundler: webpackBundler(),
     webpack: (config) => ({
       ...config,
       resolve: {
         ...config.resolve,
         alias: {
           ...config?.resolve?.alias,
-          '@binarystarter-angular/backend-only/crypto': [
-            path.resolve('../../libs/backend-only/crypto/src'),
-          ],
-          '@binarystarter-angular/backend-only/payloadcms': [
-            path.resolve('../../libs/backend-only/payloadcms/src'),
-          ],
-          '@binarystarter-angular/shared-types': [
-            path.resolve('../../libs/shared-types/src'),
-          ],
-          '@binarystarter-angular/backend-only/utils': [
-            path.resolve('../../libs/backend-only/utils/src'),
-          ],
+          // '@binarystarter-angular/backend-only/crypto': [
+          //   path.resolve('../../libs/backend-only/crypto/src'),
+          // ],
+          // '@binarystarter-angular/backend-only/payloadcms': [
+          //   path.resolve('../../libs/backend-only/payloadcms/src'),
+          // ],
+          // '@binarystarter-angular/shared-types': [
+          //   path.resolve('../../libs/shared-types/src'),
+          // ],
+          // '@binarystarter-angular/shared-constants': [
+          //   path.resolve('../../libs/shared-constants/src'),
+          // ],
+          // '@binarystarter-angular/backend-only/utils': [
+          //   path.resolve('../../libs/backend-only/utils/src'),
+          // ],
         },
       },
     }),
@@ -80,6 +95,7 @@ export default buildConfig({
   cors: [process.env.web_url, process.env.api_url],
   csrf: [process.env.web_url],
   typescript: {
+    declare: false,
     outputFile: path.resolve(
       '../',
       '../',

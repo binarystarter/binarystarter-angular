@@ -15,5 +15,10 @@
     "jest.config.ts",
     "src/**/*.test.ts"
   ],
-  "include": ["src/**/*.ts", "jest.config.ts", "src/lib/app.server.ts"]
+  "include": [
+    "src/**/*.ts",
+    "jest.config.ts",
+    "src/lib/app.server.ts",
+    "../shared-types/src/lib/EnvironmentType.ts"
+  ]
 }

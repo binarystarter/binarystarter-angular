@@ -1,8 +1,14 @@
+import {
+  AuthPaths,
+  sharedEnvironment,
+} from '@binarystarter-angular/shared-constants';
 import React from 'react';
+
+const url = sharedEnvironment.web.url;
 
 export const RedirectToFrontendLogoutButton = () => {
   const redirectToWeb = () => {
-    window.location.href = `http://localhost:4200/auth/logout`;
+    window.location.href = `${url}${AuthPaths.logout}`;
   };
 
   return (
@@ -14,7 +20,7 @@ export const RedirectToFrontendLogoutButton = () => {
   );
 };
 export const RedirectToFrontendLogin = () => {
-  window.location.href = `http://localhost:4200/auth/login`;
+  window.location.href = `${url}${AuthPaths.login}`;
 
   return <></>;
 };

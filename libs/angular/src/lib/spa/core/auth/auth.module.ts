@@ -14,9 +14,13 @@ import { MatInputModule } from '@angular/material/input';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { RegisterService } from './pages/register/register.service';
+import { HeaderV1Component } from '../../../layout/header-v1/header-v1.component';
+import { StaticNavComponent } from '../../../ssr/static-nav/static-nav.component';
 
 @NgModule({
   imports: [
+    HeaderV1Component,
+    StaticNavComponent,
     AppLayoutModule,
     AuthRoutingModule,
     AppFormsModule,

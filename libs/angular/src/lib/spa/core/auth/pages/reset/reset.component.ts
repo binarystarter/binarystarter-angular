@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PayloadService } from '../../../api/payload.service';
 import { AppValidatorService } from '../../../app-forms/app-validator.service';
 import { object, string, z } from 'zod';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../../services/auth-service/auth.service';
-import { AuthPaths } from '../../auth.routes';
+import { AuthPaths } from '@binarystarter-angular/shared-constants';
 
 @Component({
   selector: 'app-reset',

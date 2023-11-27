@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { PayloadApiEndpointsService } from './payload-api-endpoints.service';
 import { firstValueFrom } from 'rxjs';
 import {
@@ -27,7 +26,6 @@ export interface RefreshResponse {
 })
 export class PayloadService {
   constructor(
-    private router: Router,
     private http: HttpClient,
     private payloadApiEndpoints: PayloadApiEndpointsService,
   ) {}

@@ -6,18 +6,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { VerifyComponent } from './pages/verify/verify.component';
 import { ResetComponent } from './pages/reset/reset.component';
+import { Route } from '@angular/router';
 
-const base = 'auth';
-export const AuthPaths = {
-  base,
-  login: `${base}/login`,
-  register: `${base}/register`,
-  forgotPassword: `${base}/forgot-password`,
-  verify: `${base}/verify`,
-  logout: `${base}/logout`,
-};
-
-export const authRoutes = [
+export const authRoutes: Route[] = [
   {
     path: '',
     component: AuthComponent,
@@ -26,32 +17,38 @@ export const authRoutes = [
         path: 'login',
         component: LoginComponent,
         canActivate: [unAuthenticatedGuard],
+        pathMatch: 'full',
       },
       {
         path: 'logout',
         component: LogoutComponent,
         canActivate: [authGuard],
+        pathMatch: 'full',
       },
 
       {
         path: 'register',
         component: RegisterComponent,
         canActivate: [unAuthenticatedGuard],
+        pathMatch: 'full',
       },
       {
         path: 'forgot-password',
         component: ForgotPasswordComponent,
         canActivate: [unAuthenticatedGuard],
+        pathMatch: 'full',
       },
       {
         path: 'verify',
         component: VerifyComponent,
         canActivate: [unAuthenticatedGuard],
+        pathMatch: 'full',
       },
       {
         path: 'reset/:token',
         component: ResetComponent,
         canActivate: [unAuthenticatedGuard],
+        pathMatch: 'full',
       },
     ],
   },

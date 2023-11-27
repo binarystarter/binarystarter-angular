@@ -4,7 +4,7 @@ import {
   serverAppConfig,
 } from '@binarystarter-angular/angular';
 
-export const AngularServerBootstrap = () =>
+const AngularServerBootstrap = () =>
   bootstrapApplication(WebRootComponent, serverAppConfig);
 
 export default AngularServerBootstrap;

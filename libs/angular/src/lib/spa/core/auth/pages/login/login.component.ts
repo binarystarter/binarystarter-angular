@@ -5,7 +5,8 @@ import { AppValidatorService } from '../../../app-forms/app-validator.service';
 import { AuthService } from '../../services/auth-service/auth.service';
 import { Router } from '@angular/router';
 import { toLower } from 'lodash';
-import { AuthPaths } from '../../auth.routes';
+import { AccountPaths } from '../../../../account/account.routes';
+import { AuthPaths } from '@binarystarter-angular/shared-constants';
 
 @Component({
   selector: 'app-login',
@@ -52,7 +53,7 @@ export class LoginComponent {
     );
 
     if (res.success) {
-      await this.router.navigate(['/app']);
+      await this.router.navigate([AccountPaths.profile]);
     }
 
     return res;

@@ -45,7 +45,8 @@ Thumbs.db
 .env
 env.json
 infrastructure.json
-.npmrc
 yarn-error*
 yarn-log*
 .pnpm-store
+mongodata
+.nx

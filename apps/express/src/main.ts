@@ -2,7 +2,6 @@
  * This is not a production server yet!
  * This is only a minimal backend to get started.
  */
-import dotenv from 'dotenv';
 import express from 'express';
 import payload from 'payload';
 import cors from 'cors';
@@ -12,7 +11,7 @@ import { register, registerPath, verifyAccount, verifyPath } from './auth';
 
 const start = async () => {
   const app = express();
-  dotenv.config({
+  require('dotenv').config({
     path: '../../../.env',
   });
 
@@ -44,12 +43,6 @@ const start = async () => {
 
     await payload.init({
       secret: process.env.payload_secret,
-      mongoURL: process.env.mongo_url,
-      mongoOptions: {
-        user: process.env.mongo_username,
-        pass: process.env.mongo_password,
-        dbName: process.env.mongo_db,
-      },
       express: app,
       email: {
         fromName: 'binarystarter-angular',

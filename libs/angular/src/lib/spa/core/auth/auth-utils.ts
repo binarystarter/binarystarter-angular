@@ -1,8 +1,8 @@
-import { inject } from '@angular/core';
+import { PLATFORM_ID, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from './services/auth-service/auth.service';
 import { Observable } from 'rxjs';
-import { AuthPaths } from './auth.routes';
+import { AuthService } from './services/auth-service/auth.service';
+import { isPlatformBrowser } from '@angular/common';
 
 /**
  * Make sure user is logged in
@@ -10,57 +10,71 @@ import { AuthPaths } from './auth.routes';
  * @returns
  */
 export function authGuard() {
-  const router = inject(Router);
-  const authService = inject(AuthService);
+  const platformId: Object = inject(PLATFORM_ID);
+  const isBrowser: boolean = isPlatformBrowser(platformId);
 
-  return new Observable((subscriber) => {
-    const userSub = authService.user.subscribe({
-      next: async (user) => {
-        if (user === undefined) return;
+  if (isBrowser) {
+    const router = inject(Router);
+    const authService = inject(AuthService);
 
-        if (user && user.id) {
-          subscriber.next(true);
-        } else {
-          subscriber.next(false);
+    return new Observable((subscriber) => {
+      const userSub = authService.user.subscribe({
+        next: async (user) => {
+          if (user === undefined) return;
 
-          await router.navigate([AuthPaths.login]);
-        }
+          if (user && user.id) {
+            subscriber.next(true);
+          } else {
+            subscriber.next(false);
 
-        subscriber.complete();
-      },
+            await router.navigate(['/c/auth/login']);
+          }
+
+          subscriber.complete();
+        },
+      });
+
+      return {
+        unsubscribe() {
+          userSub.unsubscribe();
+        },
+      };
     });
+  }
 
-    return {
-      unsubscribe() {
-        userSub.unsubscribe();
-      },
-    };
-  });
+  return;
 }
 
 export function unAuthenticatedGuard() {
-  const router = inject(Router);
-  const authService = inject(AuthService);
+  const platformId: Object = inject(PLATFORM_ID);
+  const isBrowser: boolean = isPlatformBrowser(platformId);
 
-  return new Observable((subscriber) => {
-    const userSub = authService.user.subscribe({
-      next: async (user) => {
-        if (user === undefined) return;
+  if (isBrowser) {
+    const router = inject(Router);
+    const authService = inject(AuthService);
 
-        if (user === null) {
-          subscriber.next(true);
-        } else {
-          subscriber.next(false);
-          await router.navigate(['/app']);
-        }
-        subscriber.complete();
-      },
+    return new Observable((subscriber) => {
+      const userSub = authService.user.subscribe({
+        next: async (user) => {
+          if (user === undefined) return;
+
+          if (user === null) {
+            subscriber.next(true);
+          } else {
+            subscriber.next(false);
+            await router.navigate(['/c/account/profile']);
+          }
+          subscriber.complete();
+        },
+      });
+
+      return {
+        unsubscribe() {
+          userSub.unsubscribe();
+        },
+      };
     });
+  }
 
-    return {
-      unsubscribe() {
-        userSub.unsubscribe();
-      },
-    };
-  });
+  return;
 }

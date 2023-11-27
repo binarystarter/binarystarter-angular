@@ -10,8 +10,10 @@ import {
   fieldAccessAdminOrMeOnly,
   fieldAccessMeOnly,
 } from '../utils/field-access-functions';
+import { useInfrastructure } from '@binarystarter-angular/backend-only/utils';
+import { AuthPaths } from '@binarystarter-angular/shared-constants';
 
-const webAppUrl = 'http://localhost:4200';
+const { configuration } = useInfrastructure();
 
 /**
  * Only allow users that have admin role or those that
@@ -39,11 +41,11 @@ const collection: CollectionConfig = {
     maxLoginAttempts: 5,
     verify: {
       generateEmailSubject: ({ req, token, user }) => {
-        return `Verify your email address`;
+        return `Verify your email address for ${configuration.app.name}`;
       },
       generateEmailHTML: ({ req, token, user }) => {
         // Use the token provided to allow your user to verify their account
-        const url = `localhost:4200/auth/verify?token=${token}`;
+        const url = `${configuration.web.url}${AuthPaths.verify}?token=${token}`;
 
         return `
         <div style="font-family: Roboto, Helvetica, Arial, sans-serif">
@@ -58,7 +60,8 @@ const collection: CollectionConfig = {
     },
     forgotPassword: {
       generateEmailHTML: ({ req, token, user }) => {
-        const url = `${webAppUrl}/auth/reset/${token}`;
+        const url = `${configuration.web.url}${AuthPaths.reset}/${token}`;
+
         return ` 
          <div style="font-family: Roboto, Helvetica, Arial, sans-serif">
            <p style="margin-top: 10px;">Hi,</p>

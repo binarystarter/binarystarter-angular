@@ -1,20 +1,22 @@
 <div class="static-root flex-col">
   <mat-sidenav-container>
     <mat-sidenav [fixedInViewport]="true" #drawer mode="over" opened="false">
-      <web-header-v1 [mobile]="true">
+      <web-header-v1 [mobile]="isMobile">
         <div class="pt-3 pb-3">
-          <web-static-nav [mobile]="true" />
+          <web-static-nav [mobile]="isMobile" *ngIf="isMobile" />
         </div>
       </web-header-v1>
     </mat-sidenav>
 
     <mat-sidenav-content>
       <web-header-v1>
-        <web-static-nav />
+        <web-static-nav *ngIf="!isMobile" />
       </web-header-v1>
 
       <div class="flex-grow flex flex-col">
         <router-outlet></router-outlet>
+
+        <web-built-with />
       </div>
 
       <web-footer-v1 copyright="&copy;2023. All rights reserved." />

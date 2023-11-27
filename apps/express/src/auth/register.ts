@@ -1,4 +1,4 @@
-import { UserRoles } from '@binarystarter-angular/backend-only/payloadcms';
+import { UserRoles } from 'apps/express/src/payloadcms/src';
 import { Request, Response } from 'express';
 import payload from 'payload';
 import { IUser } from '@binarystarter-angular/shared-types';

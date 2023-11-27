@@ -10,15 +10,14 @@ export class ApiEndpointsService {
 
   constructor() {}
 
-  join(slug: string, path: string) {
+  join(path: string) {
     return join([this.base, path], '/');
   }
 
   public routes = {
     auth: {
-      register: this.join(this.base, 'auth/register'),
-      verify: (token: string) =>
-        `${this.join(this.base, 'auth/verify')}/${token}`,
+      register: this.join('auth/register'),
+      verify: (token: string) => `${this.join('auth/verify')}/${token}`,
     },
   };
 }

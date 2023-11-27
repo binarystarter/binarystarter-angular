@@ -8,6 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './branding-symbol.component.html',
 })
 export class BrandingSymbolComponent {
-  @Input({ required: true }) width: string;
+  @Input({ required: true }) width: number;
   @Input() src: string = '/assets/images/logo-symbol.png';
 }
