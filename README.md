@@ -3,7 +3,7 @@
 
 Secure, Stable, Automated.
 
-### **[VIEW DEMO](https://binarystarter.com/s/angular)**
+
 
 **[Join Discord Community](https://discord.gg/ERPCG8W6)**
 
@@ -30,7 +30,7 @@ Secure, Stable, Automated.
 
 
 # Installation
-For full documentation refer to [binarystarter.com](https://binarystarter.com/s/documentation)
+For full documentation refer to https://binarystartercom.notion.site/Documentation-binarystarter-angular-87b451a08050465e83bb47fc124a9029?pvs=4
 
 #### Resources
 
@@ -58,7 +58,7 @@ Run in a terminal `git clone https://github.com/binarystarter/binarystarter-angu
 Run `pnpm install`.
 
 ### Start the app
-Documentation: [binarystarter.com](https://binarystarter.com/s/documentation)
+Documentation: https://binarystartercom.notion.site/Documentation-binarystarter-angular-87b451a08050465e83bb47fc124a9029?pvs=4
 
 # The app
 
