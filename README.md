@@ -1,28 +1,10 @@
-<<<<<<< HEAD
-
-#
-
-=======
-
 # Angular 16, Payload CMS, ExpressJs - Free Open-Source Full-Stack Boilerplate
-
-> > > > > > > a3439a7 (update README)
 
 **✨ Professional Web Application Development Starter without the complexity.**
 
-<<<<<<< HEAD
-**[Join Discord Community](https://discord.gg/ERPCG8W6)**
-
-<div style="display: flex; flex-direction: row; justify-content: space-between;">
-      <img src="https://binarystarter.com/assets/images/angular/free-architecture-nodejs.png" width="380px" style="width: '100%'; height: auto;"/>
-      <img src="https://binarystarter.com/assets/images/angular/free-architecture-angular.png" width="380px" style="width: '100%'; height: auto;"/>
-</div>
-=======
 Secure, Stable, Automated.
 
-**[Join Discord Community](https://discord.gg/ERPCG8W6)**
-
-> > > > > > > a3439a7 (update README)
+### **[VIEW DEMO](https://binarystarter.com/s/angular)**
 
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
       <img src="https://binarystarter.com/assets/images/angular/free-architecture-nodejs.png" width="380px" style="width: '100%'; height: auto;"/>
@@ -30,12 +12,6 @@ Secure, Stable, Automated.
 </div>
 
 # Features
-
-<<<<<<< HEAD
-
-# Installation
-
-# For full documentation refer to https://binarystartercom.notion.site/Documentation-binarystarter-angular-87b451a08050465e83bb47fc124a9029?pvs=4
 
 - Payload CMS (headless open-source CMS)
 - I18n
@@ -50,11 +26,10 @@ Secure, Stable, Automated.
 - Pnpm, esbuild
 
 <img src="https://binarystarter.com/assets/images/angular/dashboard-payload.png" width="420px"/>
->>>>>>> a3439a7 (update README)
 
 # Installation
 
-For full documentation refer to https://binarystartercom.notion.site/Documentation-binarystarter-angular-87b451a08050465e83bb47fc124a9029?pvs=4
+For full documentation refer to [binarystarter.com](https://binarystarter.com/s/documentation)
 
 #### Resources
 
@@ -83,7 +58,7 @@ Run `pnpm install`.
 
 ### Start the app
 
-Documentation: https://binarystartercom.notion.site/Documentation-binarystarter-angular-87b451a08050465e83bb47fc124a9029?pvs=4
+Documentation: [binarystarter.com](https://binarystarter.com/s/documentation)
 
 # The app
 
