@@ -13,6 +13,8 @@ export interface Config {
     pages: Page;
     posts: Post;
     tags: Tag;
+    'payload-preferences': PayloadPreference;
+    'payload-migrations': PayloadMigration;
   };
   globals: {};
 }
@@ -26,47 +28,77 @@ export interface User {
   updatedAt: string;
   createdAt: string;
   email: string;
-  resetPasswordToken?: string;
-  resetPasswordExpiration?: string;
-  salt?: string;
-  hash?: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
   _verified: boolean;
-  _verificationToken?: string;
-  loginAttempts?: number;
-  lockUntil?: string;
-  password?: string;
+  _verificationToken?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  password: string | null;
 }
 export interface Category {
   id: string;
-  name?: string;
+  name?: string | null;
 }
 export interface Page {
   id: string;
-  title?: string;
-  publishedDate?: string;
-  tags?: string[] | Tag[];
-  content?: {
-    [k: string]: unknown;
-  }[];
-  status?: 'draft' | 'published';
+  title?: string | null;
+  publishedDate?: string | null;
+  tags?: (string | Tag)[] | null;
+  content?:
+    | {
+        [k: string]: unknown;
+      }[]
+    | null;
+  status?: ('draft' | 'published') | null;
   updatedAt: string;
   createdAt: string;
 }
 export interface Tag {
   id: string;
-  name?: string;
+  name?: string | null;
 }
 export interface Post {
   id: string;
-  title?: string;
-  author?: string | User;
-  publishedDate?: string;
-  category?: string | Category;
-  tags?: string[] | Tag[];
-  content?: {
-    [k: string]: unknown;
-  }[];
-  status?: 'draft' | 'published';
+  title?: string | null;
+  author?: (string | null) | User;
+  publishedDate?: string | null;
+  category?: (string | null) | Category;
+  tags?: (string | Tag)[] | null;
+  content?:
+    | {
+        [k: string]: unknown;
+      }[]
+    | null;
+  status?: ('draft' | 'published') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+export interface PayloadPreference {
+  id: string;
+  user: {
+    relationTo: 'users';
+    value: string | User;
+  };
+  key?: string | null;
+  value?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+export interface PayloadMigration {
+  id: string;
+  name?: string | null;
+  batch?: number | null;
   updatedAt: string;
   createdAt: string;
 }

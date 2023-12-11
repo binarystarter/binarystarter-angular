@@ -10,8 +10,8 @@ import {
   fieldAccessAdminOrMeOnly,
   fieldAccessMeOnly,
 } from '../utils/field-access-functions';
-import { useInfrastructure } from '@binarystarter-angular/backend-only/utils';
 import { AuthPaths } from '@binarystarter-angular/shared-constants';
+import { useInfrastructure } from '../../utils/use-infrastructure';
 
 const { configuration } = useInfrastructure();
 
@@ -23,7 +23,7 @@ const { configuration } = useInfrastructure();
  * @param data
  * @param id
  */
-export const accessAdminOrMeOnly: Access = ({ req, id, data }) => {
+export const accessAdminOrMeOnly: Access = ({ req, id }) => {
   const { user } = req;
 
   if (accessAdminOnly({ req })) return true;
@@ -40,10 +40,10 @@ const collection: CollectionConfig = {
     tokenExpiration: 1296000,
     maxLoginAttempts: 5,
     verify: {
-      generateEmailSubject: ({ req, token, user }) => {
+      generateEmailSubject: () => {
         return `Verify your email address for ${configuration.app.name}`;
       },
-      generateEmailHTML: ({ req, token, user }) => {
+      generateEmailHTML: ({ token, user }) => {
         // Use the token provided to allow your user to verify their account
         const url = `${configuration.web.url}${AuthPaths.verify}?token=${token}`;
 
@@ -59,7 +59,7 @@ const collection: CollectionConfig = {
       },
     },
     forgotPassword: {
-      generateEmailHTML: ({ req, token, user }) => {
+      generateEmailHTML: ({ token }) => {
         const url = `${configuration.web.url}${AuthPaths.reset}/${token}`;
 
         return ` 

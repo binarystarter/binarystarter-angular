@@ -2,6 +2,7 @@
   "name": "express-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "implicitDependencies": ["express"],
+  "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nx/jest:jest",
@@ -12,11 +13,8 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/express-e2e/**/*.{js,ts}"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     }
   }
 }

@@ -12,7 +12,7 @@
   ],
   "compilerOptions": {
     "esModuleInterop": true,
-    "module": "CommonJS",
+    "module": "commonjs",
     "jsx": "react"
   }
 }

@@ -1,31 +1,30 @@
+import { mongooseAdapter } from '@payloadcms/db-mongodb';
+import { slateEditor } from '@payloadcms/richtext-slate';
 import { buildConfig } from 'payload/config';
+import { UsersCollection } from './src/payloadcms/collections/UsersCollection';
+import { CategoriesCollection } from './src/payloadcms/collections/CategoriesCollection';
+import { PagesCollection } from './src/payloadcms/collections/PagesCollection';
+import { PostsCollection } from './src/payloadcms/collections/PostsCollection';
+import { TagsCollection } from './src/payloadcms/collections/TagsCollection';
 import * as path from 'path';
+import { webpackBundler } from '@payloadcms/bundler-webpack';
+import { ReturnToWebComponent } from './src/payloadcms/components/ReturnToWebComponent';
 import {
-  CategoriesCollection,
-  PagesCollection,
-  PostsCollection,
   RedirectToFrontendLogin,
   RedirectToFrontendLogoutButton,
-  ReturnToWebComponent,
-  TagsCollection,
-  UsersCollection,
-} from 'apps/express/src/payloadcms/src';
-import { webpackBundler } from '@payloadcms/bundler-webpack';
-import { slateEditor } from '@payloadcms/richtext-slate';
-import { mongooseAdapter } from '@payloadcms/db-mongodb';
+} from './src/payloadcms/components/RedirectComponent';
+import { useInfrastructure } from './src/utils/use-infrastructure';
 
-require('dotenv').config({
-  path: '../../.env',
-});
+const { configuration } = useInfrastructure();
 
 export default buildConfig({
-  serverURL: process.env.api_url,
+  serverURL: configuration.api.url,
   db: mongooseAdapter({
-    url: process.env.mongo_url,
+    url: configuration.mongo.url,
     connectOptions: {
-      user: process.env.mongo_username,
-      pass: process.env.mongo_password,
-      dbName: process.env.mongo_db,
+      user: configuration.mongo.username,
+      pass: configuration.mongo.password,
+      dbName: configuration.mongo.db,
     },
   }),
   editor: slateEditor({}),
@@ -49,10 +48,10 @@ export default buildConfig({
   },
   admin: {
     user: UsersCollection.slug,
-    buildPath: path.resolve(__dirname, '../../dist/payload'),
+    buildPath: path.resolve(__dirname, '../../dist/apps/payload'),
     meta: {
-      titleSuffix: process.env.app_name || '',
-      favicon: `${process.env.web_url}/assets/favicon.ico`,
+      titleSuffix: configuration.app.name || '',
+      favicon: `${configuration.web.url}/assets/favicon.ico`,
     },
     components: {
       beforeNavLinks: [ReturnToWebComponent],
@@ -72,28 +71,20 @@ export default buildConfig({
       resolve: {
         ...config.resolve,
         alias: {
-          ...config?.resolve?.alias,
-          // '@binarystarter-angular/backend-only/crypto': [
-          //   path.resolve('../../libs/backend-only/crypto/src'),
-          // ],
-          // '@binarystarter-angular/backend-only/payloadcms': [
-          //   path.resolve('../../libs/backend-only/payloadcms/src'),
-          // ],
-          // '@binarystarter-angular/shared-types': [
-          //   path.resolve('../../libs/shared-types/src'),
-          // ],
-          // '@binarystarter-angular/shared-constants': [
-          //   path.resolve('../../libs/shared-constants/src'),
-          // ],
-          // '@binarystarter-angular/backend-only/utils': [
-          //   path.resolve('../../libs/backend-only/utils/src'),
-          // ],
+          ...config.resolve.alias,
+          dotenv: path.resolve(__dirname, './dotenv.js'),
+          '@binarystarter-angular/shared-types': [
+            path.resolve('../../libs/shared-types/src'),
+          ],
+          '@binarystarter-angular/shared-constants': [
+            path.resolve('../../libs/shared-constants/src'),
+          ],
         },
       },
     }),
   },
-  cors: [process.env.web_url, process.env.api_url],
-  csrf: [process.env.web_url],
+  cors: [configuration.web.url, configuration.api.url],
+  csrf: [configuration.web.url],
   typescript: {
     declare: false,
     outputFile: path.resolve(
@@ -102,7 +93,7 @@ export default buildConfig({
       'libs',
       'shared-types',
       'src',
-      'payload-types.ts',
+      'payload-types.ts'
     ),
   },
   graphQL: {
@@ -112,7 +103,7 @@ export default buildConfig({
       'libs',
       'shared-types',
       'src',
-      'generated-schema.graphql',
+      'generated-schema.graphql'
     ),
   },
   plugins: [],

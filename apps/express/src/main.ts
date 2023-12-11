@@ -8,12 +8,18 @@ import cors from 'cors';
 import { createTransport } from 'nodemailer';
 import bodyParser from 'body-parser';
 import { register, registerPath, verifyAccount, verifyPath } from './auth';
+import { useInfrastructure } from './utils/use-infrastructure';
+import dotenv from 'dotenv';
+import path from 'path';
+import process from 'process';
+
+dotenv.config({
+  path: path.resolve(path.join(process.cwd(), 'apps/express/.env')),
+});
+const { configuration } = useInfrastructure();
 
 const start = async () => {
   const app = express();
-  require('dotenv').config({
-    path: '../../../.env',
-  });
 
   app.set('trust proxy', true);
   // parse application/json
@@ -21,32 +27,30 @@ const start = async () => {
 
   app.use(
     cors({
-      origin: process.env.web_url,
+      origin: configuration.web.url,
       credentials: true,
       allowedHeaders: 'Content-Type,Authorization',
-    }),
+    })
   );
 
   try {
-    console.log('API: Initializing Payload...');
-
-    if (!process.env.payload_secret)
+    if (!configuration.payload.secret)
       throw new Error('Payload secret cannot be undefined.');
 
     const transporter = createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.email_user,
-        pass: process.env.email_password,
+        user: configuration.email.user,
+        pass: configuration.email.password,
       },
     });
 
     await payload.init({
-      secret: process.env.payload_secret,
+      secret: configuration.payload.secret,
       express: app,
       email: {
         fromName: 'binarystarter-angular',
-        fromAddress: process.env.email_from,
+        fromAddress: configuration.email.from,
         transport: transporter,
       },
       onInit: () => {

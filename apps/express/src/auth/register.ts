@@ -1,7 +1,7 @@
-import { UserRoles } from 'apps/express/src/payloadcms/src';
 import { Request, Response } from 'express';
 import payload from 'payload';
 import { IUser } from '@binarystarter-angular/shared-types';
+import { UserRoles } from '../payloadcms/UserRoles';
 
 export const registerPath = 'register';
 export const register = async (req: Request, res: Response) => {

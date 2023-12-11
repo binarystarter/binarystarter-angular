@@ -4,51 +4,91 @@
   "sourceRoot": "apps/express/src",
   "projectType": "application",
   "targets": {
-    "build": {
-      "executor": "@nx/webpack:webpack",
+    "payload:config": {
+      "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "target": "node",
-        "compiler": "tsc",
+        "platform": "node",
+        "outputPath": "dist/apps/payload",
+        "format": ["cjs"],
+        "bundle": true,
+        "main": "apps/express/payload.config.ts",
+        "tsConfig": "apps/express/tsconfig.app.json",
+        "generateLockfile": true,
+        "esbuildOptions": {
+          "sourcemap": false,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      }
+    },
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "dependsOn": ["payload:config", "payload:build"],
+      "options": {
+        "platform": "node",
         "outputPath": "dist/apps/express",
+        "format": ["cjs"],
+        "bundle": false,
         "main": "apps/express/src/main.ts",
         "tsConfig": "apps/express/tsconfig.app.json",
-        "assets": ["apps/express/src/assets"],
-        "isolatedConfig": true,
-        "webpackConfig": "apps/express/webpack.config.js"
+        "assets": [
+          "apps/express/src/assets",
+          {
+            "input": "apps/express",
+            "glob": ".env",
+            "output": "."
+          }
+        ],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
       },
       "configurations": {
         "development": {},
-        "production": {}
+        "production": {
+          "generateLockfile": true,
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
       }
     },
     "serve": {
-      "executor": "nx:run-commands",
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
       "options": {
-        "command": "npx nodemon",
-        "cwd": "apps/express"
+        "buildTarget": "express:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "express:build:development"
+        },
+        "production": {
+          "buildTarget": "express:build:production"
+        }
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/express/**/*.ts"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/express/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "apps/express/jest.config.ts"
       }
     },
     "payload": {
@@ -78,8 +118,11 @@
         "command": "npx payload generate:types && npx payload generate:graphQLSchema",
         "cwd": "apps/express"
       }
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "docker build -f apps/express/Dockerfile . -t express"
     }
   },
-
   "tags": []
 }
