@@ -2,7 +2,6 @@
 
 # compiled output
 dist
-.env
 tmp
 /out-tsc
 
@@ -40,13 +39,7 @@ testem.log
 Thumbs.db
 
 .nx/cache
-.mongodata
-.pnpm
-**/*/.env
-*.json
-yarn-error*
-yarn-log*
-.pnpm-store
-mongodata
-.nx
 .angular
+mongodata
+.mongodata
+.vscode
