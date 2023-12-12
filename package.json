@@ -1,6 +1,6 @@
 {
   "name": "@binarystarter-angular/source",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "run-prod": "cross-env PAYLOAD_CONFIG_PATH=dist/apps/payload/payload.config.js node dist/apps/express/main.js"
@@ -116,4 +116,3 @@
     "tsconfig-paths": "^4.2.0"
   }
 }
-
