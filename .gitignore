@@ -43,3 +43,4 @@ Thumbs.db
 mongodata
 .mongodata
 .vscode
+.env

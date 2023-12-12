@@ -4,8 +4,8 @@ import cors from 'cors';
 import { join, resolve } from 'path';
 import compression from 'compression';
 import AngularServerBootstrap from './src/main.server';
-import { CommonEngine } from '@nguniversal/common/engine';
 import { environment } from '@binarystarter-angular/angular';
+import { CommonEngine } from '@angular/ssr';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -21,7 +21,7 @@ export function app(): express.Express {
   server.use(
     cors({
       origin: environment.web.url,
-    }),
+    })
   );
 
   // Example Express Rest API endpoints
@@ -31,7 +31,7 @@ export function app(): express.Express {
     '*.*',
     express.static(browserDistFolder, {
       maxAge: '1y',
-    }),
+    })
   );
 
   // All regular routes use the Angular engine

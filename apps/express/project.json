@@ -66,18 +66,10 @@
       }
     },
     "serve": {
-      "executor": "@nx/js:node",
-      "defaultConfiguration": "development",
+      "executor": "nx:run-commands",
       "options": {
-        "buildTarget": "express:build"
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "express:build:development"
-        },
-        "production": {
-          "buildTarget": "express:build:production"
-        }
+        "command": "npx nodemon",
+        "cwd": "apps/express"
       }
     },
     "lint": {
