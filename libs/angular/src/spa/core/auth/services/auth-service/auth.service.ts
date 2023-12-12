@@ -11,6 +11,7 @@ import {
   SuccessMessagePayload,
 } from '@binarystarter-angular/shared-types';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { PayloadApiEndpointsService } from '../../../api/payload-api-endpoints.service';
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +24,8 @@ export class AuthService {
     private http: HttpClient,
     private payloadService: PayloadService,
     private apiEndpoints: ApiEndpointsService,
-    private _snackBar: MatSnackBar,
+    private payloadEndpoints: PayloadApiEndpointsService,
+    private _snackBar: MatSnackBar
   ) {
     this.fetchUser().subscribe();
   }
@@ -32,43 +34,26 @@ export class AuthService {
     return this._userSubject;
   }
 
-  saveSession(token: string) {
-    if (token) {
-      localStorage.setItem('token', token);
-    }
-  }
-
-  getSession() {
-    return localStorage.getItem('token');
-  }
-
-  removeSession() {
-    // if it exists then we set it back after removing the session
-    const registeredUserEmail = localStorage.getItem('email');
-    localStorage.clear();
-    if (registeredUserEmail) localStorage.setItem('email', registeredUserEmail);
-    this._userSubject.next(null);
-  }
-
   async verify(email: string, token: string) {
     return firstValueFrom(
       this.http.post<IResponse<ILoginResponse>>(
-        this.apiEndpoints.routes.auth.verify(token),
+        this.payloadEndpoints.routes.auth.verify(token),
         {
           email,
-        },
-      ),
+        }
+      )
     );
   }
 
   private fetchUser() {
+    console.log('me?');
     return new Observable<IUser | null>((subscriber) => {
       this.payloadService
         .me()
         .pipe(
           catchError((error) => {
             throw error;
-          }),
+          })
         )
         .subscribe((res: any) => {
           if (!res) {
@@ -76,10 +61,6 @@ export class AuthService {
             return;
           }
           if (res.success && res.payload.user) {
-            if (res.payload.token !== this.getSession()) {
-              this.saveSession(res.payload.token);
-            }
-
             // if the login is cookie based session
             this._userSubject.next(res.payload.user);
             subscriber.next(res.payload.user);
@@ -95,11 +76,10 @@ export class AuthService {
 
   async login(username: string, password: string) {
     const res = await firstValueFrom(
-      this.payloadService.login(username, password),
+      this.payloadService.login(username, password)
     );
 
     if (res.success) {
-      this.saveSession(res.payload.token);
       await firstValueFrom(this.fetchUser());
     } else {
       this._snackBar.open(res.payload[0].message, '', {
@@ -114,10 +94,7 @@ export class AuthService {
   logout() {
     return this.payloadService.logout().subscribe({
       next: () => {
-        this.removeSession();
-        setTimeout(() => {
-          window.location.reload();
-        });
+        window.location.reload();
       },
     });
   }
@@ -125,9 +102,9 @@ export class AuthService {
   register<T>(data: T) {
     return firstValueFrom(
       this.http.post<IResponse<SuccessMessagePayload>>(
-        this.apiEndpoints.routes.auth.register,
-        data,
-      ),
+        this.payloadEndpoints.routes.auth.register,
+        data
+      )
     );
   }
 

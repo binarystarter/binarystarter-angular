@@ -9,7 +9,6 @@ import {
 } from '@angular/common/http';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { authorizationInterceptor } from './spa/config/interceptors/authorization.interceptor';
 import { httpErrorHandlingInterceptor } from './spa/config/interceptors/http.interceptor';
 import { AngularAppService } from './spa/angular-app.service';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -25,10 +24,7 @@ export const webConfig: ApplicationConfig = {
     provideHttpClient(
       withFetch(),
       withInterceptorsFromDi(),
-      withInterceptors([
-        authorizationInterceptor,
-        httpErrorHandlingInterceptor,
-      ]),
+      withInterceptors([httpErrorHandlingInterceptor])
     ),
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,

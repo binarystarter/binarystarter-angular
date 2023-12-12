@@ -7,7 +7,6 @@ import payload from 'payload';
 import cors from 'cors';
 import { createTransport } from 'nodemailer';
 import bodyParser from 'body-parser';
-import { register, registerPath, verifyAccount, verifyPath } from './auth';
 import { useInfrastructure } from './utils/use-infrastructure';
 import dotenv from 'dotenv';
 import path from 'path';
@@ -68,8 +67,7 @@ const start = async () => {
   /**
    * Extra custom routes
    */
-  app.post(registerPath, register);
-  app.post(verifyPath, verifyAccount);
+
   /**
    * End extra custom routes
    */

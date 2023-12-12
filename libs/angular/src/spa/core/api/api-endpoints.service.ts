@@ -14,10 +14,5 @@ export class ApiEndpointsService {
     return join([this.base, path], '/');
   }
 
-  public routes = {
-    auth: {
-      register: this.join('auth/register'),
-      verify: (token: string) => `${this.join('auth/verify')}/${token}`,
-    },
-  };
+  public routes = {};
 }

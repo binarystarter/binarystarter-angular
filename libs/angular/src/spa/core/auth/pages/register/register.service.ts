@@ -15,21 +15,21 @@ export class RegisterService {
   constructor(
     private validatorService: AppValidatorService,
     private http: HttpClient,
-    private authService: AuthService,
+    private authService: AuthService
   ) {
     this._validation = {
-      username: string().nonempty('Username must be set'),
+      username: string().min(1, 'Username must be set'),
       email: string()
         .email('Invalid Email address')
-        .nonempty('Email is required.'),
+        .min(1, 'Email is required.'),
       password: string()
         .min(8, 'Password must be minimum 8 characters')
-        .nonempty('Password is required.'),
+        .min(1, 'Password is required.'),
       confirmPassword: string()
         .min(8, 'Password must be minimum 8 characters')
-        .nonempty('Confirm Password is required.'),
-      firstName: string().nonempty('Please type your first name'),
-      lastName: string().nonempty('Please type your last name'),
+        .min(1, 'Confirm Password is required.'),
+      firstName: string().min(1, 'Please type your first name'),
+      lastName: string().min(1, 'Please type your last name'),
     };
 
     this._validationZod = object(this._validation);
@@ -51,7 +51,7 @@ export class RegisterService {
         username: new FormControl<RegisterFormType['username']>('', {
           validators: this.validatorService.control(
             'username',
-            this._validation,
+            this._validation
           ),
         }),
         email: new FormControl<RegisterFormType['email']>('', {
@@ -60,7 +60,7 @@ export class RegisterService {
         password: new FormControl<RegisterFormType['password']>('', {
           validators: this.validatorService.control(
             'password',
-            this._validation,
+            this._validation
           ),
         }),
         confirmPassword: new FormControl<RegisterFormType['confirmPassword']>(
@@ -68,20 +68,20 @@ export class RegisterService {
           {
             validators: this.validatorService.control(
               'confirmPassword',
-              this._validation,
+              this._validation
             ),
-          },
+          }
         ),
         firstName: new FormControl<RegisterFormType['firstName']>('', {
           validators: this.validatorService.control(
             'firstName',
-            this._validation,
+            this._validation
           ),
         }),
         lastName: new FormControl<RegisterFormType['lastName']>('', {
           validators: this.validatorService.control(
             'lastName',
-            this._validation,
+            this._validation
           ),
         }),
       },
@@ -96,14 +96,14 @@ export class RegisterService {
               this.validatorService.setFieldError(
                 confirmPassword,
                 'confirmPassword',
-                'Confirmed password is different from the password. Please fix it.',
+                'Confirmed password is different from the password. Please fix it.'
               );
             }
 
             return null;
           },
         ],
-      },
+      }
     );
   }
 }

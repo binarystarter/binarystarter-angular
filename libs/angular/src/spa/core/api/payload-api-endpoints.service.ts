@@ -28,6 +28,8 @@ export class PayloadApiEndpointsService {
       logout: this.create(this.usersSlug, 'logout'),
       forgotPassword: this.create(this.usersSlug, 'forgot-password'),
       resetPassword: this.create(this.usersSlug, 'reset-password'),
+      register: this.create(this.usersSlug),
+      verify: (token: string) => this.create(this.usersSlug, `verify/${token}`),
       refresh: this.create(this.usersSlug, 'refresh-token'),
     },
     user: {

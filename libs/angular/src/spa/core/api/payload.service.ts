@@ -27,7 +27,7 @@ export interface RefreshResponse {
 export class PayloadService {
   constructor(
     private http: HttpClient,
-    private payloadApiEndpoints: PayloadApiEndpointsService,
+    private payloadApiEndpoints: PayloadApiEndpointsService
   ) {}
 
   login(username: string, password: string) {
@@ -37,7 +37,7 @@ export class PayloadService {
         email: username,
         password: password,
       },
-      { withCredentials: true },
+      { withCredentials: true }
     );
   }
 
@@ -45,13 +45,22 @@ export class PayloadService {
     return this.http.post<IResponse<Record<string, any>>>(
       this.payloadApiEndpoints.routes.auth.logout,
       {},
-      { withCredentials: true },
+      { withCredentials: true }
+    );
+  }
+
+  register() {
+    return this.http.post<IResponse<Record<string, any>>>(
+      this.payloadApiEndpoints.routes.auth.register,
+      {},
+      { withCredentials: true }
     );
   }
 
   me() {
     return this.http.get<IResponse<MeResponse>>(
       this.payloadApiEndpoints.routes.auth.me,
+      { withCredentials: true }
     );
   }
 
@@ -61,8 +70,8 @@ export class PayloadService {
         this.payloadApiEndpoints.routes.auth.forgotPassword,
         {
           email,
-        },
-      ),
+        }
+      )
     );
   }
 
@@ -73,8 +82,8 @@ export class PayloadService {
         {
           token,
           password,
-        },
-      ),
+        }
+      )
     );
   }
 }

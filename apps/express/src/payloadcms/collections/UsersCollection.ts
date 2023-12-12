@@ -88,38 +88,23 @@ const collection: CollectionConfig = {
     update: accessAdminOrMeOnly,
     delete: () => false,
     unlock: accessAdminOnly,
-    create: accessAdminOnly,
+    create: () => true,
   },
   fields: [
     {
       name: 'email',
       type: 'email',
       required: true,
-      access: {
-        read: () => true,
-        update: () => false,
-        create: fieldAccessAdminOnly,
-      },
     },
     {
       name: 'firstName',
       type: 'text',
       required: true,
-      access: {
-        read: () => true,
-        update: fieldAccessMeOnly,
-        create: fieldAccessAdminOrMeOnly,
-      },
     },
     {
       name: 'lastName',
       type: 'text',
       required: true,
-      access: {
-        read: () => true,
-        update: fieldAccessMeOnly,
-        create: fieldAccessAdminOrMeOnly,
-      },
     },
     {
       name: 'username',
@@ -129,31 +114,6 @@ const collection: CollectionConfig = {
         read: () => true,
         update: () => false,
         create: () => true,
-      },
-    },
-    {
-      name: 'verified',
-      type: 'checkbox',
-      defaultValue: false,
-      required: true,
-      admin: {
-        hidden: true,
-      },
-      access: {
-        read: () => true,
-        update: () => false,
-        create: () => false,
-      },
-    },
-    {
-      name: '_verified',
-      type: 'checkbox',
-      defaultValue: false,
-      required: true,
-      access: {
-        read: () => true,
-        update: () => false,
-        create: () => false,
       },
     },
     {
