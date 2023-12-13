@@ -4,7 +4,6 @@ import { MatDrawer } from '@angular/material/sidenav';
 import { AuthService } from './core/auth/services/auth-service/auth.service';
 import { Subscription } from 'rxjs';
 import { RouterModule } from '@angular/router';
-import { AppLayoutModule } from '../layout/layout.module';
 import { AuthModule } from './core/auth/auth.module';
 import AccountModule from './account/account.module';
 import { AppFormsModule } from './core/app-forms/app-forms.module';
@@ -13,6 +12,7 @@ import { BrandingComponent } from '../layout/branding/branding.component';
 import { DashboardPaths } from './core/api/payload-paths';
 import { AuthPaths } from '@binarystarter-angular/shared-constants';
 import { StaticPaths } from '../ssr/static-paths';
+import { AppLayoutModule } from '../layout/layout.module';
 
 @Component({
   standalone: true,

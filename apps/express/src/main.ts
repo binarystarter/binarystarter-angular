@@ -8,13 +8,8 @@ import cors from 'cors';
 import { createTransport } from 'nodemailer';
 import bodyParser from 'body-parser';
 import { useInfrastructure } from './utils/use-infrastructure';
-import dotenv from 'dotenv';
-import path from 'path';
 import process from 'process';
 
-dotenv.config({
-  path: path.resolve(path.join(process.cwd(), 'apps/express/.env')),
-});
 const { configuration } = useInfrastructure();
 
 const start = async () => {

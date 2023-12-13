@@ -37,10 +37,7 @@ export class AppButtonComponent implements OnChanges, AfterViewInit {
 
   loading: boolean = false;
 
-  constructor(
-    private router: Router,
-    private appService: AngularAppService,
-  ) {
+  constructor(private router: Router, private appService: AngularAppService) {
     // this.class += ` color-${this.color} ${this.inverted ? "is-inverted" : ""}`;
   }
 

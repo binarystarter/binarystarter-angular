@@ -1,3 +1,7 @@
+import { loadDotenv } from '../load-dotenv';
+
+loadDotenv();
+
 export const useInfrastructure = () => ({
   configuration: {
     app: {
@@ -24,12 +28,10 @@ export const useInfrastructure = () => ({
       users_slug: process.env.payload_users_slug,
     },
     mongo: {
-      port: process.env.mongo_port,
-      host: process.env.mongo_host,
       password: process.env.mongo_password,
       username: process.env.mongo_username,
       db: process.env.mongo_db,
-      url: process.env.mongo_url,
+      connectionString: process.env.mongo_connectionString,
     },
   },
 });

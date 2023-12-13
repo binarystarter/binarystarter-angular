@@ -4,7 +4,7 @@ import { AppLayoutModule } from '../layout/layout.module';
 import { RouterModule } from '@angular/router';
 import { FooterV1Component } from '../layout/footer-v1/footer-v1.component';
 import { HeaderV1Component } from '../layout/header-v1/header-v1.component';
-import { AngularAppService } from '../lib/spa/angular-app.service';
+import { AngularAppService } from '../spa/angular-app.service';
 import { Subscription } from 'rxjs';
 import { MatDrawer } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
@@ -47,7 +47,7 @@ export class StaticComponent implements OnInit, OnDestroy {
             this.drawer.toggle();
           });
         }
-      }
+      },
     );
   }
 

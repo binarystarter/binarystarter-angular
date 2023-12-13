@@ -1,6 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularAppService } from '../../lib/spa/angular-app.service';
+import { AngularAppService } from '../../spa/angular-app.service';
 import { StaticPaths } from '../static-paths';
 import { AuthPaths } from '@binarystarter-angular/shared-constants';
 import { NavLinkComponent } from '../../layout/nav-link/nav-link.component';

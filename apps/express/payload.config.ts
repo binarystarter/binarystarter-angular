@@ -20,7 +20,7 @@ const { configuration } = useInfrastructure();
 export default buildConfig({
   serverURL: configuration.api.url,
   db: mongooseAdapter({
-    url: configuration.mongo.url,
+    url: configuration.mongo.connectionString,
     connectOptions: {
       user: configuration.mongo.username,
       pass: configuration.mongo.password,
@@ -72,7 +72,6 @@ export default buildConfig({
         ...config.resolve,
         alias: {
           ...config.resolve.alias,
-          dotenv: path.resolve(__dirname, './dotenv.js'),
           '@binarystarter-angular/shared-types': [
             path.resolve('../../libs/shared-types/src'),
           ],

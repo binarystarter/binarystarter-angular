@@ -37,11 +37,15 @@
         "main": "apps/express/src/main.ts",
         "tsConfig": "apps/express/tsconfig.app.json",
         "assets": [
-          "apps/express/src/assets",
+          {
+            "input": "apps/express/src/assets",
+            "glob": "*",
+            "output": "/assets"
+          },
           {
             "input": "apps/express",
-            "glob": ".env",
-            "output": "."
+            "glob": ".env.local",
+            "output": ".env.local"
           }
         ],
         "generatePackageJson": true,

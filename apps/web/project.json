@@ -30,6 +30,12 @@
       },
       "configurations": {
         "production": {
+          "fileReplacements": [
+            {
+              "replace": "libs/angular/src/lib/environments/environment.ts",
+              "with": "libs/angular/src/lib/environments/environment.production.ts"
+            }
+          ],
           "budgets": [
             {
               "type": "initial",
@@ -45,6 +51,12 @@
           "outputHashing": "all"
         },
         "development": {
+          "fileReplacements": [
+            {
+              "replace": "libs/angular/src/lib/environments/environment.ts",
+              "with": "libs/angular/src/lib/environments/environment.development.ts"
+            }
+          ],
           "optimization": false,
           "extractLicenses": false,
           "sourceMap": true
