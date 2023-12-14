@@ -4,7 +4,7 @@
 
 Secure, Stable, Automated.
 
-### **[VIEW DEMO](https://binarystarter.com/s/angular)**
+### **[VIEW DEMO](https://binarystarter.com)**
 
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
       <img src="https://binarystarter.com/assets/images/angular/free-architecture-nodejs.png" width="380px" style="width: '100%'; height: auto;"/>
@@ -29,7 +29,7 @@ Secure, Stable, Automated.
 
 # Installation
 
-For full documentation refer to [binarystarter.com](https://binarystarter.com/s/documentation)
+For full documentation refer to [binarystarter.com](https://binarystarter.com/documentation)
 
 #### Resources
 
@@ -58,7 +58,7 @@ Run `pnpm install`.
 
 ### Start the app
 
-Documentation: [binarystarter.com](https://binarystarter.com/s/documentation)
+Documentation: [binarystarter.com](https://binarystarter.com/documentation)
 
 # The app
 

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../../../environments/environment';
 import { PayloadService } from '../../../api/payload.service';
 import { BehaviorSubject, catchError, firstValueFrom, Observable } from 'rxjs';
 import { ApiEndpointsService } from '../../../api/api-endpoints.service';
