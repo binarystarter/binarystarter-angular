@@ -10,12 +10,11 @@ For full documentation refer to [**Documentation**](https://binarystarter.com/do
       <img src="https://binarystarter.com/assets/images/github-1.png" width="100%" style="width: '100%'; height: auto;"/>
 </div>
 
-## Do you need AWS / Self-hosted VPS automated deployiment?
+## Do you need AWS / Self-hosted VPS automated deployment?
 
-<div style="display: flex; flex-direction: row; justify-content: space-between;">
-  <img src="https://binarystarter.com/assets/images/github-2.png" width="100%" style="width: '100%'; height: auto;"/>
-</div>
 Using infrastructure as code, the infrastructure gets automatically based on typescript source code, using Pulumi. (https://www.pulumi.com/)
+
+[**Read more**](https://binarystarter.com/pro)
 
 ## Features out of the box
 
