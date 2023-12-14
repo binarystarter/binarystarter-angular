@@ -1,16 +1,12 @@
 <div class="flex" [ngClass]="{ 'flex-col': mobile }">
   <web-nav-link (click)="checkMobile()" to="/" icon="home"> Home </web-nav-link>
 
-  <web-nav-link (click)="checkMobile()" [to]="staticPaths.features">
-    Features
-  </web-nav-link>
-
-  <web-nav-link (click)="checkMobile()" [to]="staticPaths.pricing">
-    Pricing
-  </web-nav-link>
-
-  <web-nav-link (click)="checkMobile()" [to]="staticPaths.faq">
-    FAQ
+  <web-nav-link
+    (click)="checkMobile()"
+    icon="business"
+    [to]="staticPaths.about"
+  >
+    About
   </web-nav-link>
 
   <web-nav-link color="primary" icon="person_add" [to]="authPaths.register">

@@ -5,16 +5,10 @@
     href="{{ !full ? domain + '/' : '' }}{{ to === '/' ? '' : to }}"
     [target]="target"
   >
-    <app-button
-      class="w-full"
-      [class]="class"
-      [type]="type"
-      [color]="color"
-      [inverted]="inverted"
-      [disabled]="disabled"
-      [action]="action"
-      [icon]="icon"
-      ><ng-content></ng-content
-    ></app-button>
+    <button mat-button type="button">
+      <mat-icon>{{ icon }}</mat-icon>
+
+      <ng-content></ng-content>
+    </button>
   </a>
 </div>

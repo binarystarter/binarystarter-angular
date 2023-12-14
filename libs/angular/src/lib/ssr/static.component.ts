@@ -9,7 +9,6 @@ import { Subscription } from 'rxjs';
 import { MatDrawer } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { StaticNavComponent } from './static-nav/static-nav.component';
-import { BuiltWithComponent } from './components/built-with/built-with.component';
 
 @Component({
   standalone: true,
@@ -20,7 +19,6 @@ import { BuiltWithComponent } from './components/built-with/built-with.component
     StaticNavComponent,
     FooterV1Component,
     HeaderV1Component,
-    BuiltWithComponent,
   ],
   selector: 'web-app',
   templateUrl: './static.component.html',
@@ -47,7 +45,7 @@ export class StaticComponent implements OnInit, OnDestroy {
             this.drawer.toggle();
           });
         }
-      },
+      }
     );
   }
 

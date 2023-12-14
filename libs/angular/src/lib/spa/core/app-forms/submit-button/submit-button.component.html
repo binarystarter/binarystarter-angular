@@ -7,11 +7,7 @@
   [form]="form"
   [submitFn]="submitFn"
 >
-  <app-button [disabled]="disabled" color="primary" [class]="height">
-    <div *ngIf="loading" class="loading-animation">
-      <span class="loader"></span>
-    </div>
-
-    <ng-content *ngIf="!loading"></ng-content>
-  </app-button>
+  <button [disabled]="disabled" mat-button type="button">
+    <ng-content></ng-content>
+  </button>
 </div>

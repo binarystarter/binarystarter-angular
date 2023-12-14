@@ -8,7 +8,6 @@ import { AuthModule } from './core/auth/auth.module';
 import AccountModule from './account/account.module';
 import { AppFormsModule } from './core/app-forms/app-forms.module';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { BrandingComponent } from '../layout/branding/branding.component';
 import { DashboardPaths } from './core/api/payload-paths';
 import { AuthPaths } from '@binarystarter-angular/shared-constants';
 import { StaticPaths } from '../ssr/static-paths';
@@ -18,7 +17,6 @@ import { AppLayoutModule } from '../layout/layout.module';
   standalone: true,
   imports: [
     AppLayoutModule,
-    BrandingComponent,
     AppFormsModule,
     RouterModule,
     AuthModule,
@@ -76,14 +74,14 @@ export class AppComponent implements OnInit {
     if (this.mobileQuery.matches) {
       if (this.drawer) this.drawer.mode = 'over';
       this.drawerWidth = 0;
-      this.toggleDrawer(false);
+      this.toggleDrawer();
     } else {
       if (this.drawer) this.drawer.mode = 'side';
       this.drawerWidth = this.drawer._getWidth();
     }
   };
 
-  toggleDrawer = async (isOpen?: boolean) => {
+  toggleDrawer = async () => {
     await this.drawer.toggle();
     this.drawerWidth = this.mobileQuery.matches ? 0 : this.drawer._getWidth();
   };

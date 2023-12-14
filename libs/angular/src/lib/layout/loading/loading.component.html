@@ -1,7 +1,0 @@
-<div
-  [ngClass]="{ 'pt-32 absolute': isGlobal === 'true', 'pt-6': isGlobal === 'false' }"
-  class="w-full h-max top-20.5 left-0 bg-transparent flex flex-col items-center"
->
-  <mat-spinner diameter="40"></mat-spinner>
-  <h3 class="text-grey-500 pt-6" *ngIf="isGlobal === 'true'">Loading</h3>
-</div>

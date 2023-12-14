@@ -16,7 +16,24 @@
       <div class="flex-grow flex flex-col">
         <router-outlet></router-outlet>
 
-        <web-built-with />
+        <a href="https://binarystarter.com">
+          <div
+            class="fixed bottom-4 right-5 bg-primary-500 px-5 py-2 rounded-lg z-10"
+          >
+            <div class="flex flex-row justify-around items-center">
+              <p class="text-white text-sm">Built with</p>
+              <div class="ml-3">
+                <a href="https://binarystarter.com">
+                  <img
+                    width="130"
+                    class="h-auto"
+                    src="/assets/images/logo-dark.png"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
 
       <web-footer-v1 copyright="&copy;2023. All rights reserved." />

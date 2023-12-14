@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { AppLayoutModule } from '../../../layout/layout.module';
 
 @Component({
-  selector: 'app-license-page',
+  selector: 'web-about-page',
   standalone: true,
   imports: [AppLayoutModule],
-  templateUrl: './license-page.component.html',
+  templateUrl: './about-page.component.html',
 })
-export class LicensePageComponent {}
-export default LicensePageComponent;
+export class AboutPageComponent {}
+
+export default AboutPageComponent;

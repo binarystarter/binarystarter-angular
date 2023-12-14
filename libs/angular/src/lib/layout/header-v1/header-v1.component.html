@@ -6,11 +6,13 @@
     >
       <div class="container mx-auto flex flex-row">
         <div class="branding">
-          <web-branding
-            darkSrc="/assets/images/logo-dark.png"
-            lightSrc="/assets/images/logo-light.png"
-            [width]="190"
-          />
+          <a href="/">
+            <img
+              width="190"
+              class="h-auto"
+              src="/assets/images/logo-dark.png"
+            />
+          </a>
         </div>
 
         <div class="md:flex block flex-row flex-grow justify-end items-center">
@@ -33,9 +35,15 @@
             }"
             class="md:hidden"
           >
-            <app-button (click)="appService.toggleDrawer()" icon="menu">
+            <button
+              mat-button
+              type="button"
+              (click)="appService.toggleDrawer()"
+            >
+              <mat-icon>menu</mat-icon>
+
               Menu
-            </app-button>
+            </button>
           </div>
           <!-- End Toggle Button -->
         </div>
