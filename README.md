@@ -47,6 +47,7 @@ Latest stable versions are used. The repository is kept up to date and maintaine
 - Pnpm, esbuild
 
 <br/>
+
 <img src="https://binarystarter.com/assets/images/angular/dashboard-payload.png" width="420px"/>
 
 <br/>
