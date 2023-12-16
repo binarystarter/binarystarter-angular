@@ -12,7 +12,7 @@ services:
     volumes:
       - .mongodata:/data/db
     env_file:
-      - .env
+      - .env.local
     networks:
       - webnet
     ports:

@@ -110,6 +110,10 @@
         "cwd": "apps/express"
       }
     },
+    "mongo": {
+      "command": "docker-compose -f apps/express/docker-compose.yml up",
+      "cwd": "apps/express"
+    },
     "docker-build": {
       "dependsOn": ["build"],
       "command": "docker build -f apps/express/Dockerfile . -t express"
