@@ -62,6 +62,9 @@ export default buildConfig({
         ...config.resolve,
         alias: {
           ...config.resolve.alias,
+          '@binarystarter-angular/payloadcms-common': [
+            path.resolve('../../libs/payloadcms-common/src'),
+          ],
           '@binarystarter-angular/shared-types': [
             path.resolve('../../libs/shared-types/src'),
           ],
