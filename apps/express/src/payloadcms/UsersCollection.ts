@@ -1,20 +1,14 @@
 import { CollectionConfig } from 'payload/types';
+import { Access } from 'payload/config';
+import { AuthPaths } from '@binarystarter-angular/shared-constants';
+import { useInfrastructure } from '../utils/use-infrastructure';
 import {
   UserRoles,
   UserRolesLabels,
-} from '../../../../libs/payloadcms-common/src/lib/UserRoles';
-import { Access } from 'payload/config';
-import {
   accessAdminOnly,
   adminPanelOnlyAdmins,
-} from '../../../../libs/payloadcms-common/src/lib/access-functions';
-import {
   fieldAccessAdminOnly,
-  fieldAccessAdminOrMeOnly,
-  fieldAccessMeOnly,
-} from '../../../../libs/payloadcms-common/src/lib/field-access-functions';
-import { AuthPaths } from '@binarystarter-angular/shared-constants';
-import { useInfrastructure } from '../utils/use-infrastructure';
+} from '@binarystarter-angular/payloadcms-common';
 
 const { configuration } = useInfrastructure();
 
