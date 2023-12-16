@@ -6,10 +6,5 @@
     "types": ["node"]
   },
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "../../libs/payloadcms-common/src/lib/access-functions.ts",
-    "../../libs/payloadcms-common/src/lib/UserRoles.ts"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
