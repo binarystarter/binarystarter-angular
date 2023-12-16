@@ -45,3 +45,4 @@ mongodata
 .vscode
 .env.local
 .env
+libs/shared-constants/src/lib/web-url.ts

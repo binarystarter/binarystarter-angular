@@ -1,10 +1,7 @@
-import {
-  AuthPaths,
-  sharedEnvironment,
-} from '@binarystarter-angular/shared-constants';
+import { AuthPaths, webUrl } from '@binarystarter-angular/shared-constants';
 import React from 'react';
 
-const url = sharedEnvironment.web.url;
+const url = webUrl;
 
 export const RedirectToFrontendLogoutButton = () => {
   const redirectToWeb = () => {

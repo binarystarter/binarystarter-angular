@@ -1,10 +1,5 @@
-import {
-  AuthPaths,
-  sharedEnvironment,
-} from '@binarystarter-angular/shared-constants';
+import { AuthPaths, webUrl } from '@binarystarter-angular/shared-constants';
 import React from 'react';
-
-const webUrl = sharedEnvironment.web.url;
 
 export const ReturnToWebComponent = () => {
   const redirectToWeb = () => {
