@@ -15,6 +15,14 @@
               {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
+              },
+              {
+                "sourceTag": "type:frontend",
+                "onlyDependOnLibsWithTags": ["type:frontend"]
+              },
+              {
+                "sourceTag": "type:backend",
+                "onlyDependOnLibsWithTags": ["type:backend"]
               }
             ]
           }

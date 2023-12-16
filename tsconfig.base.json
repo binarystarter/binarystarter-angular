@@ -15,15 +15,21 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@express": ["apps/express/*"],
-      "@web": ["apps/web/*"],
-      "@binarystarter-angular/angular": ["libs/angular/src/index.ts"],
+      "@binarystarter-angular/angular-common": [
+        "libs/angular-common/src/index.ts"
+      ],
+      "@binarystarter-angular/default-theme": [
+        "libs/default-theme/src/index.ts"
+      ],
+      "@binarystarter-angular/payloadcms-common": [
+        "libs/payloadcms-common/src/index.ts"
+      ],
       "@binarystarter-angular/shared-constants": [
         "libs/shared-constants/src/index.ts"
       ],
+      "@binarystarter-angular/shared-types": ["libs/shared-types/src/index.ts"],
       "payload/generated-types": ["libs/shared-types/src/payload-types.ts"],
-      "react": ["./node_modules/@types/react"],
-      "@binarystarter-angular/shared-types": ["libs/shared-types/src/index.ts"]
+      "react": ["./node_modules/@types/react"]
     }
   },
   "exclude": ["node_modules", "tmp"]

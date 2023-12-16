@@ -5,7 +5,7 @@
     "src/**/*.spec.ts",
     "node_modules",
     ".git",
-    "../../libs/angular/**/*"
+    "../../libs/default-theme/**/*"
   ],
   "env": { "LOG_LEVEL": "debug" },
   "exec": "npx node --inspect=0.0.0.0:9229 -r tsconfig-paths/register -r ts-node/register src/main.ts"

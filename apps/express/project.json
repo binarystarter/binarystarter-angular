@@ -115,5 +115,5 @@
       "command": "docker build -f apps/express/Dockerfile . -t express"
     }
   },
-  "tags": []
+  "tags": ["type:backend"]
 }

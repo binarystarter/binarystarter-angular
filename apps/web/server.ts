@@ -4,8 +4,8 @@ import cors from 'cors';
 import { join, resolve } from 'path';
 import compression from 'compression';
 import AngularServerBootstrap from './src/main.server';
-import { environment } from '@binarystarter-angular/angular';
 import { CommonEngine } from '@angular/ssr';
+import { env } from './src/theme';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -20,7 +20,7 @@ export function app(): express.Express {
   server.set('views', browserDistFolder);
   server.use(
     cors({
-      origin: environment.web.url,
+      origin: env.web.url,
     })
   );
 

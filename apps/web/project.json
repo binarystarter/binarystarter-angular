@@ -4,7 +4,7 @@
   "projectType": "application",
   "prefix": "web",
   "sourceRoot": "apps/web/src",
-  "tags": [],
+  "tags": ["type:frontend"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
@@ -18,7 +18,6 @@
         "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"],
         "styles": [
           "@angular/material/prebuilt-themes/deeppurple-amber.css",
-          "apps/web/src/styles/variables.css",
           "apps/web/src/styles.css"
         ],
         "scripts": [],
@@ -32,8 +31,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "libs/angular/src/lib/environments/environment.ts",
-              "with": "libs/angular/src/lib/environments/environment.production.ts"
+              "replace": "libs/default-theme/src/lib/environments/environment.ts",
+              "with": "libs/default-theme/src/lib/environments/environment.production.ts"
             }
           ],
           "budgets": [
@@ -53,8 +52,8 @@
         "development": {
           "fileReplacements": [
             {
-              "replace": "libs/angular/src/lib/environments/environment.ts",
-              "with": "libs/angular/src/lib/environments/environment.development.ts"
+              "replace": "libs/default-theme/src/lib/environments/environment.ts",
+              "with": "libs/default-theme/src/lib/environments/environment.development.ts"
             }
           ],
           "optimization": false,

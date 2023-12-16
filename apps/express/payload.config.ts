@@ -1,11 +1,7 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb';
 import { slateEditor } from '@payloadcms/richtext-slate';
 import { buildConfig } from 'payload/config';
-import { UsersCollection } from './src/payloadcms/collections/UsersCollection';
-import { CategoriesCollection } from './src/payloadcms/collections/CategoriesCollection';
-import { PagesCollection } from './src/payloadcms/collections/PagesCollection';
-import { PostsCollection } from './src/payloadcms/collections/PostsCollection';
-import { TagsCollection } from './src/payloadcms/collections/TagsCollection';
+import { UsersCollection } from './src/payloadcms/UsersCollection';
 import * as path from 'path';
 import { webpackBundler } from '@payloadcms/bundler-webpack';
 import { ReturnToWebComponent } from './src/payloadcms/components/ReturnToWebComponent';
@@ -28,13 +24,7 @@ export default buildConfig({
     },
   }),
   editor: slateEditor({}),
-  collections: [
-    UsersCollection,
-    CategoriesCollection,
-    PagesCollection,
-    PostsCollection,
-    TagsCollection,
-  ],
+  collections: [UsersCollection],
   routes: {
     admin: '/admin',
     api: '/api',

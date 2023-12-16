@@ -1,10 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import {
-  WebRootComponent,
-  serverAppConfig,
-} from '@binarystarter-angular/angular';
+import { WebRootComponent, serverConfig } from './theme';
 
 const AngularServerBootstrap = () =>
-  bootstrapApplication(WebRootComponent, serverAppConfig);
+  bootstrapApplication(WebRootComponent, serverConfig);
 
 export default AngularServerBootstrap;
