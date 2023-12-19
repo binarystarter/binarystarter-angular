@@ -1,4 +1,4 @@
-# Angular 17, Payload CMS, ExpressJs - Free Open-Source Full-Stack Boilerplate
+# Angular, Payload CMS, ExpressJs - Free Open-Source Full-Stack Boilerplate
 
 ## ✨ Professional Web Application Development Starter without the complexity.
 
