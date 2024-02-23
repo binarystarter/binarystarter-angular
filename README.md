@@ -1,4 +1,4 @@
-# Angular, Payload CMS, ExpressJs - Free Open-Source Full-Stack Boilerplate
+# Angular, Payload CMS, ExpressJs - Free Open-Source Full-Stack Boilerplate Starter
 
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
       <a href="https://binarystarter.com/"><img src="https://binarystarter.com/assets/images/github-1.png" width="100%" style="width: '100%'; height: auto;"/></a>
