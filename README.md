@@ -1,10 +1,14 @@
 # Angular, Payload CMS, ExpressJs - Free Open-Source Full-Stack Boilerplate
 
+# Templates & Themes
+
+**[View our themes & templates https://binarystarter.com/themes-templates](https://binarystarter.com/themes-templates)**
+
 ## ✨ Professional Web Application Development Starter without the complexity.
 
 Monorepository, Secure, Stable, Automated. **[VIEW DEMO](https://binarystarter.com)**
 
-For full documentation refer to [**Documentation**](https://binarystarter.com/documentation).
+For full documentation refer to [**Documentation**](https://binarystarter.com/documentation--open-source-web-app-starter-kit-angular-payload-cms-nx-expressjs).
 
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
       <img src="https://binarystarter.com/assets/images/github-1.png" width="100%" style="width: '100%'; height: auto;"/>
@@ -14,7 +18,7 @@ For full documentation refer to [**Documentation**](https://binarystarter.com/do
 
 Using infrastructure as code, the infrastructure gets automatically based on typescript source code, using Pulumi. (https://www.pulumi.com/)
 
-[**Read more**](https://binarystarter.com/pro)
+[**Read more**](https://binarystarter.com/themes-templates)
 
 ## Features out of the box
 
@@ -54,7 +58,7 @@ Latest stable versions are used. The repository is kept up to date and maintaine
 
 # Installation
 
-For full documentation refer to → [**DOCUMENTATION**](https://binarystarter.com/documentation).
+For full documentation refer to → [**DOCUMENTATION**](https://binarystarter.com/documentation--open-source-web-app-starter-kit-angular-payload-cms-nx-expressjs).
 
 Let’s get started! 🚀
 
