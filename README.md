@@ -1,12 +1,14 @@
 # Angular, Payload CMS, ExpressJs - Free Open-Source Full-Stack Boilerplate
 
+Full Stack Angular boilerplate starter with the integrated open-source CMS PayloadCMS. Monorepository, Secure, Stable, Automated.
+
 # Templates & Themes
 
 **[View our themes & templates https://binarystarter.com/themes-templates](https://binarystarter.com/themes-templates)**
 
 ## ✨ Professional Web Application Development Starter without the complexity.
 
-Monorepository, Secure, Stable, Automated. **[VIEW DEMO](https://binarystarter.com)**
+ **[VIEW DEMO](https://binarystarter.com)**
 
 For full documentation refer to [**Documentation**](https://binarystarter.com/documentation--open-source-web-app-starter-kit-angular-payload-cms-nx-expressjs).
 
