@@ -1,7 +1,7 @@
 # Angular, Payload CMS, ExpressJs - Free Open-Source Full-Stack Boilerplate
 
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
-      <img src="https://binarystarter.com/assets/images/github-1.png" width="100%" style="width: '100%'; height: auto;"/>
+      <a href="https://binarystarter.com/"><img src="https://binarystarter.com/assets/images/github-1.png" width="100%" style="width: '100%'; height: auto;"/></a>
 </div>
 
 Full Stack Angular boilerplate starter with the integrated open-source CMS PayloadCMS. Monorepository, Secure, Stable, Automated.
@@ -11,7 +11,7 @@ Full Stack Angular boilerplate starter with the integrated open-source CMS Paylo
 **[View our themes & templates https://binarystarter.com/themes-templates](https://binarystarter.com/themes-templates)**
 
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
-      <img src="https://binarystarter.com/media/products-showcase.png" width="100%" style="width: '100%'; height: auto;"/>
+      <a href="https://binarystarter.com/themes-templates"><img src="https://binarystarter.com/media/products-showcase.png" width="100%" style="width: '100%'; height: auto;"/></a>
 </div>
 
 **[View our themes & templates https://binarystarter.com/themes-templates](https://binarystarter.com/themes-templates)**
