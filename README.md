@@ -1,8 +1,18 @@
 # Angular, Payload CMS, ExpressJs - Free Open-Source Full-Stack Boilerplate
 
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+      <img src="https://binarystarter.com/assets/images/github-1.png" width="100%" style="width: '100%'; height: auto;"/>
+</div>
+
 Full Stack Angular boilerplate starter with the integrated open-source CMS PayloadCMS. Monorepository, Secure, Stable, Automated.
 
 # Templates & Themes
+
+**[View our themes & templates https://binarystarter.com/themes-templates](https://binarystarter.com/themes-templates)**
+
+<div style="display: flex; flex-direction: row; justify-content: space-between;">
+      <img src="https://binarystarter.com/media/products-showcase.png" width="100%" style="width: '100%'; height: auto;"/>
+</div>
 
 **[View our themes & templates https://binarystarter.com/themes-templates](https://binarystarter.com/themes-templates)**
 
@@ -11,10 +21,6 @@ Full Stack Angular boilerplate starter with the integrated open-source CMS Paylo
  **[VIEW DEMO](https://binarystarter.com)**
 
 For full documentation refer to [**Documentation**](https://binarystarter.com/documentation--open-source-web-app-starter-kit-angular-payload-cms-nx-expressjs).
-
-<div style="display: flex; flex-direction: row; justify-content: space-between;">
-      <img src="https://binarystarter.com/assets/images/github-1.png" width="100%" style="width: '100%'; height: auto;"/>
-</div>
 
 ## Do you need AWS / Self-hosted VPS automated deployment?
 
